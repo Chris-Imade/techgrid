@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Exvent - Event & Conference HTML5 Template</title>
+    <title>About The Tech Grid Series - Technology Innovation Platform</title>
     <meta name="robots" content="noindex, follow">
-    <meta name="description" content="">
+    <meta name="description" content="Learn about The Tech Grid Series - A forward-thinking knowledge exchange platform by SurfSpot Communications exploring technology, innovation, and human development across Africa.">
+    <meta name="keywords" content="About Tech Grid Series, Technology Platform, Innovation, Africa, SurfSpot Communications, Digital Transformation">
+    <meta name="author" content="SurfSpot Communications Limited">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
@@ -34,6 +36,25 @@
     <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
+    <!-- Custom CSS for equal speaker image dimensions and improved buttons -->
+    <style>
+        .speaker-section .speaker-link .single-speaker .speaker-thumb {
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .speaker-section .speaker-link .single-speaker .speaker-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: .3s;
+            z-index: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -204,7 +225,7 @@
                 <div class="row g-0">
                     <div class="col-lg-7 order-lg-1 order-2">
                         <div class="about-thumb-wrap">
-                            <img src="assets/images/about_page_img.jpg" alt="about_img1">
+                            <img src="assets/images/custom-images/tg-2.jpg" style="object-fit: cover;" width="700" height="935" alt="about_img1">
 
                         </div>
                     </div>
@@ -245,27 +266,28 @@
         <!-- About Area End -->
 
         <!-- Speaker Area Start -->
-        <div class="speaker-section speaker-about section-padding-top">
-            <div class="section-traingle-shape"></div>
+        <div class="speaker-section section-padding-top">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title text-center">
-                            <h5 class="sub-title orange">Leadership</h5>
-                            <h2 class="title white">Meet Our Expert Team</h2>
+                            <h5 class="sub-title">Speakers & Moderator</h5>
+                            <h2 class="title white">Our Distinguished Speakers</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row g-0 justify-content-center">
-                    <div class="col-lg-3 col-sm-6 ">
-                        <a class="speaker-link" href="speaker-single.html">
+                    <!-- Speaker 1: Host -->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="speaker-link" href="speaker-ako.html">
                             <div class="single-speaker">
                                 <div class="speaker-thumb">
-                                    <img src="assets/images/speaker/speaker_1.jpg" alt="Speaker">
+                                    <img src="assets/images/custom-images/speakers/TechGrid 4.2 Host _Ako.png"
+                                        alt="Host">
                                 </div>
                                 <div class="speaker-content">
-                                    <h4>Mike Fermalin</h4>
-                                    <span>Lead Speaker</span>
+                                    <h4>Engr. Ako Agenmonmen</h4>
+                                    <span>Founder, SurfSpot Communications Ltd.</span>
                                 </div>
                                 <div class="speaker-shape">
                                     <img src="assets/images/shape/speaker_shape1.png" alt="">
@@ -273,15 +295,18 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-3 col-sm-6 ">
-                        <a class="speaker-link" href="speaker-single.html">
+
+                    <!-- Speaker 2: Guest Speaker -->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="speaker-link" href="speaker-tomiwa.html">
                             <div class="single-speaker">
                                 <div class="speaker-thumb">
-                                    <img src="assets/images/speaker/speaker_2.jpg" alt="Speaker">
+                                    <img src="assets/images/custom-images/speakers/Tomiwa Akinbile.png"
+                                        alt="Guest Speaker">
                                 </div>
                                 <div class="speaker-content">
-                                    <h4>Mike Fermalin</h4>
-                                    <span>Lead Speaker</span>
+                                    <h4>Tomiwa Akinbile</h4>
+                                    <span>Finance Executive</span>
                                 </div>
                                 <div class="speaker-shape">
                                     <img src="assets/images/shape/speaker_shape1.png" alt="">
@@ -289,98 +314,21 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-3 col-sm-6 ">
-                        <a class="speaker-link" href="speaker-single.html">
+
+                    <!-- Moderator -->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="speaker-link" href="speaker-andrew.html">
                             <div class="single-speaker">
                                 <div class="speaker-thumb">
-                                    <img src="assets/images/speaker/speaker_3.jpg" alt="Speaker">
+                                    <img src="assets/images/custom-images/speakers/4.2 Moderator Andrew Igbineweka.JPG"
+                                        alt="Moderator">
                                 </div>
                                 <div class="speaker-content">
-                                    <h4>Mike Fermalin</h4>
-                                    <span>Lead Speaker</span>
+                                    <h4>Andrew Igbineweka</h4>
+                                    <span>Event Moderator</span>
                                 </div>
                                 <div class="speaker-shape">
                                     <img src="assets/images/shape/speaker_shape1.png" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 ">
-                        <a class="speaker-link" href="speaker-single.html">
-                            <div class="single-speaker">
-                                <div class="speaker-thumb">
-                                    <img src="assets/images/speaker/speaker_4.jpg" alt="Speaker">
-                                </div>
-                                <div class="speaker-content">
-                                    <h4>Mike Fermalin</h4>
-                                    <span>Lead Speaker</span>
-                                </div>
-                                <div class="speaker-shape">
-                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 ">
-                        <a class="speaker-link" href="speaker-single.html">
-                            <div class="single-speaker">
-                                <div class="speaker-thumb">
-                                    <img src="assets/images/speaker/speaker_5.jpg" alt="Speaker">
-                                </div>
-                                <div class="speaker-content">
-                                    <h4>Mike Fermalin</h4>
-                                    <span>Lead Speaker</span>
-                                </div>
-                                <div class="speaker-shape">
-                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 ">
-                        <a class="speaker-link" href="speaker-single.html">
-                            <div class="single-speaker">
-                                <div class="speaker-thumb">
-                                    <img src="assets/images/speaker/speaker_6.jpg" alt="Speaker">
-                                </div>
-                                <div class="speaker-content">
-                                    <h4>Mike Fermalin</h4>
-                                    <span>Lead Speaker</span>
-                                </div>
-                                <div class="speaker-shape">
-                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 ">
-                        <a class="speaker-link" href="speaker-single.html">
-                            <div class="single-speaker">
-                                <div class="speaker-thumb">
-                                    <img src="assets/images/speaker/speaker_7.jpg" alt="Speaker">
-                                </div>
-                                <div class="speaker-content">
-                                    <h4>Mike Fermalin</h4>
-                                    <span>Lead Speaker</span>
-                                </div>
-                                <div class="speaker-shape">
-                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 ">
-                        <a class="speaker-link" href="speaker-single.html">
-                            <div class="single-speaker">
-                                <div class="speaker-thumb">
-                                    <img src="assets/images/speaker/speaker_8.jpg" alt="Speaker">
-                                </div>
-                                <div class="speaker-content">
-                                    <h4>Mike Fermalin</h4>
-                                    <span>Lead Speaker</span>
-                                </div>
-                                <div class="speaker-shape">
-                                    <img src="assets/images/shape/speaker_shape1.png" alt="Speaker">
                                 </div>
                             </div>
                         </a>
@@ -391,14 +339,14 @@
         <!-- Speaker Area End -->
 
         <!-- Brand Area Start -->
-        <div class="brand-area section-padding-02">
+        <div class="brand-area section-padding-05">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title-wrap">
                             <div class="section-title text-center">
-                                <h5 class="sub-title orange">Sponsors</h5>
-                                <h2 class="title">50+ leading companies with us</h2>
+                                <h5 class="sub-title">Sponsors</h5>
+                                <h2 class="title">Leading companies partnering with us</h2>
                             </div>
                         </div>
                     </div>
@@ -406,42 +354,27 @@
                 <div class="row justify-content-center text-center">
                     <div class="col-md-3 col-6">
                         <div class="brand-item">
-                            <a href="blog-details.html"><img src="assets/images/logo/brand1.png" alt="Brand"></a>
+                            <img src="assets/images/custom-images/sponsors/image1.png" alt="Brand">
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="brand-item">
-                            <a href="blog-details.html"><img src="assets/images/logo/brand2.png" alt="Brand"></a>
+                            <img src="assets/images/custom-images/sponsors/image2.png" alt="Brand">
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="brand-item">
-                            <a href="blog-details.html"><img src="assets/images/logo/brand3.png" alt="Brand"></a>
+                            <img src="assets/images/custom-images/sponsors/image3.png" alt="Brand">
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
-                        <div class="brand-item">
-                            <a href="blog-details.html"><img src="assets/images/logo/brand4.png" alt="Brand"></a>
-                        </div>
+                    <!-- <div class="col-md-3 col-6">
+                    <div class="brand-item">
+                        <img src="assets/images/custom-images/sponsors/image4.png" alt="Brand">
                     </div>
+                </div> -->
                     <div class="col-md-3 col-6">
                         <div class="brand-item">
-                            <a href="blog-details.html"><img src="assets/images/logo/brand5.png" alt="Brand"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="brand-item">
-                            <a href="blog-details.html"><img src="assets/images/logo/brand6.png" alt="Brand"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="brand-item">
-                            <a href="blog-details.html"><img src="assets/images/logo/brand7.png" alt="Brand"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="brand-item">
-                            <a href="blog-details.html"><img src="assets/images/logo/brand8.png" alt="Brand"></a>
+                            <img src="assets/images/custom-images/sponsors/image5.png" alt="Brand">
                         </div>
                     </div>
                 </div>
@@ -449,120 +382,8 @@
         </div>
         <!-- Brand Area End -->
 
-        <!-- Countdown Start -->
-        <div class="event-countdown-2 event-countdown-3 about-page-countdown section-padding-02"
-            style="background-image: url(assets/images/bg/countdown_bg.jpg);">
-            <div class="container">
-                <div class="counter-wrapper">
-                    <div class="row g-0 justify-content-center">
-                        <div class="col-lg-4">
-                            <div class="counter-content-left">
-                                <h4 class="counter-title">Book your seat now</h4>
-                                <a class="btn btn-orange" href="pricing.html">Buy Ticket Now</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <!-- Countdown Start -->
-                            <div class="exvent-countdown-inner-3 countdown" data-countdown="2026/04/26"
-                                data-format="short">
-                                <div class="single-countdown">
-                                    <span class="count countdown__time daysLeft"></span>
-                                    <span class="value countdown__time daysText"></span>
-                                </div>
-                                <div class="single-countdown countdown-2">
-                                    <span class="count countdown__time hoursLeft"></span>
-                                    <span class="value countdown__time hoursText"></span>
-                                </div>
-                                <div class="single-countdown countdown-3">
-                                    <span class="count countdown__time minsLeft"></span>
-                                    <span class="value countdown__time minsText"></span>
-                                </div>
-                                <div class="single-countdown countdown-4">
-                                    <span class="count countdown__time secsLeft"></span>
-                                    <span class="value countdown__time secsText"></span>
-                                </div>
-                            </div>
-                            <!-- Countdown End -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Countdown End -->
 
-        <!-- Testimonial Start -->
-        <div class="testimonial-area section-padding-04">
-            <div class="container">
-                <!-- Testimonial Wrap Start -->
-                <div class="testimonial-wrap">
-                    <!-- Testimonial Author Start -->
-                    <div class="testimonial-author text-center">
-                        <div class="testimonial-author-wrap">
-                            <img src="assets/images/shape/testimonial_shape1.png" alt="Shape"
-                                class="testimonial-shape-1">
-                            <img src="assets/images/shape/testimonial_shape2.png" alt="Shape"
-                                class="testimonial-shape-2">
-                            <div class="author-images-wrap author-images-active">
-                                <div class="swiper-container">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide author-image">
-                                            <img src="assets/images/testimonial_thumb1.jpg" alt="">
-                                        </div>
-                                        <div class="swiper-slide author-image">
-                                            <img src="assets/images/testimonial_thumb2.jpg" alt="">
-                                        </div>
-                                        <div class="swiper-slide author-image">
-                                            <img src="assets/images/testimonial_thumb1.jpg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial Author End -->
-                    <!-- Testimonial Content Start -->
-                    <div class="testimonial-content testimonial-content-active">
-                        <img src="assets/images/shape/testimonial_quote_shape.png" alt="Shape"
-                            class="testimonial-quote-shape">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide single-testimonial-content">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world to
-                                        come learn, grow, scrape their knees, try new things, to be vulnerable, epic
-                                        adventures</p>
-                                    <div class="author-details">
-                                        <h5 class="name">August Myth</h5>
-                                        <span class="designation">Student</span>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide single-testimonial-content">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world to
-                                        come learn, grow, scrape their knees, try new things, to be vulnerable, epic
-                                        adventures</p>
-                                    <div class="author-details">
-                                        <h5 class="name">August Myth</h5>
-                                        <span class="designation">Student</span>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide single-testimonial-content">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world to
-                                        come learn, grow, scrape their knees, try new things, to be vulnerable, epic
-                                        adventures</p>
-                                    <div class="author-details">
-                                        <h5 class="name">August Myth</h5>
-                                        <span class="designation">Student</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                    <!-- Testimonial Content End -->
-                </div>
-                <!-- Testimonial Wrap End -->
-            </div>
-        </div>
-        <!-- Testimonial End -->
+       
 
         <!-- Footer Section Start -->
         <div class="footer-section" style="background-image: url(assets/images/bg/footer_bg1.jpg);">
