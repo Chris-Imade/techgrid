@@ -283,7 +283,7 @@
                                 
                                 <div class="form-group">
                                     <label for="phone" style="margin-bottom: 8px; font-weight: 600;">Phone Number *</label>
-                                    <input type="tel" class="comment-form-input" id="phone" name="phone" required>
+                                    <input type="tel" class="comment-form-input" id="phone" name="phone" placeholder="e.g., +2348012345678 or 08012345678" required>
                                 </div>
                                 
                                 <div class="form-group">
@@ -311,23 +311,23 @@
                                     <label for="interests" style="margin-bottom: 8px; font-weight: 600;">Areas of Interest (Check all that apply)</label>
                                     <div style="margin-top: 10px;">
                                         <div class="form-check" style="margin-bottom: 10px;">
-                                            <input class="form-check-input" type="checkbox" value="ai-trading" id="aiTrading" name="interests[]">
+                                            <input class="form-check-input" type="checkbox" value="ai-trading" id="aiTrading" name="interests">
                                             <label class="form-check-label" for="aiTrading">AI in Algorithmic Trading</label>
                                         </div>
                                         <div class="form-check" style="margin-bottom: 10px;">
-                                            <input class="form-check-input" type="checkbox" value="risk-management" id="riskManagement" name="interests[]">
+                                            <input class="form-check-input" type="checkbox" value="risk-management" id="riskManagement" name="interests">
                                             <label class="form-check-label" for="riskManagement">Risk Management & AI</label>
                                         </div>
                                         <div class="form-check" style="margin-bottom: 10px;">
-                                            <input class="form-check-input" type="checkbox" value="fraud-detection" id="fraudDetection" name="interests[]">
+                                            <input class="form-check-input" type="checkbox" value="fraud-detection" id="fraudDetection" name="interests">
                                             <label class="form-check-label" for="fraudDetection">Fraud Detection</label>
                                         </div>
                                         <div class="form-check" style="margin-bottom: 10px;">
-                                            <input class="form-check-input" type="checkbox" value="robo-advisors" id="roboAdvisors" name="interests[]">
+                                            <input class="form-check-input" type="checkbox" value="robo-advisors" id="roboAdvisors" name="interests">
                                             <label class="form-check-label" for="roboAdvisors">Robo-Advisors</label>
                                         </div>
                                         <div class="form-check" style="margin-bottom: 10px;">
-                                            <input class="form-check-input" type="checkbox" value="regulatory-compliance" id="regulatoryCompliance" name="interests[]">
+                                            <input class="form-check-input" type="checkbox" value="regulatory-compliance" id="regulatoryCompliance" name="interests">
                                             <label class="form-check-label" for="regulatoryCompliance">Regulatory Compliance</label>
                                         </div>
                                     </div>
@@ -335,7 +335,7 @@
                                 
                                 <div class="form-group">
                                     <label for="expectations" style="margin-bottom: 8px; font-weight: 600;">What do you hope to gain from this conference?</label>
-                                    <textarea class="form-control" id="expectations" name="expectations" rows="4" placeholder="Tell us about your expectations and goals..."></textarea>
+                                    <textarea class="comment-form-input" id="expectations" name="expectations" rows="4" placeholder="Tell us about your expectations and goals..."></textarea>
                                 </div>
                                 
                                 <div class="form-group">
@@ -451,9 +451,9 @@
                         </div>
                         <div class="col-lg-7 col-12">
                             <div class="footer-newsletter-form">
-                                <form action="#">
-                                    <input type="text" placeholder="Your Email">
-                                    <button class="btn btn-primary">Subscribe</button>
+                                <form class="newsletter-form">
+                                    <input type="email" name="email" placeholder="Your Email" required>
+                                    <button type="submit" class="btn btn-primary">Subscribe</button>
                                 </form>
                             </div>
                         </div>
@@ -567,17 +567,11 @@
             }
             
             if (isValid) {
-                // Show success message
-                alert('Thank you for registering! You will receive a confirmation email with the Zoom link shortly.');
-                
-                // Here you would normally send the data to your server
-                // For now, we'll just reset the form
-                this.reset();
-            } else {
-                alert('Please fill in all required fields.');
+                // This will be handled by the API integration script
             }
         });
     </script>
+    <script src="assets/js/api-integration.js"></script>
 
 </body>
 
