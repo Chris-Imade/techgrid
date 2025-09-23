@@ -10,6 +10,26 @@
     <meta name="keywords" content="AI Finance, Artificial Intelligence, Financial Technology, Tech Grid Series, Conference 2025, SurfSpot Communications">
     <meta name="author" content="SurfSpot Communications Limited">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="The Tech Grid Series: The Rise of AI in Finance - Conference 2025">
+    <meta property="og:description" content="Join industry experts exploring how artificial intelligence is revolutionizing the financial sector. September 27, 2025 | 1:00 - 3:00 PM WAT | Online Event">
+    <meta property="og:type" content="event">
+    <meta property="og:url" content="https://techgridseries.com/conference.html">
+    <meta property="og:image" content="assets/images/custom-images/pexels-yankrukov-7698708.jpg">
+    <meta property="og:image:alt" content="The Tech Grid Series AI in Finance Conference 2025">
+    <meta property="og:site_name" content="The Tech Grid Series">
+    <meta property="og:locale" content="en_US">
+    <meta property="event:start_time" content="2025-09-27T13:00:00+01:00">
+    <meta property="event:end_time" content="2025-09-27T15:00:00+01:00">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Tech Grid Series: The Rise of AI in Finance - Conference 2025">
+    <meta name="twitter:description" content="Join industry experts exploring how artificial intelligence is revolutionizing the financial sector. September 27, 2025 | Online Event">
+    <meta name="twitter:image" content="assets/images/custom-images/pexels-yankrukov-7698708.jpg">
+    <meta name="twitter:site" content="@mysurfspot">
+    <meta name="twitter:creator" content="@mysurfspot">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
@@ -48,6 +68,33 @@
             object-position: top;
             transition: .3s;
             z-index: 0;
+        }
+
+        /* Previous Events Gallery - Equal Image Heights */
+        .past-event-gallery-area .single-gallery {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            height: 300px; /* Fixed height for all gallery items */
+        }
+
+        .past-event-gallery-area .single-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .past-event-gallery-area .single-gallery:hover img {
+            transform: scale(1.05);
+        }
+
+        .past-event-gallery-area .gallery-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 2;
         }
 
         /* Enhanced Register Now button styling */
@@ -687,11 +734,11 @@
                                 <img src="assets/images/custom-images/sponsors/image3.png" alt="Brand">
                             </div>
                         </div>
-                        <!-- <div class="col-md-3 col-6">
+                        <div class="col-md-3 col-6">
                         <div class="brand-item">
-                            <img src="assets/images/custom-images/sponsors/image4.png" alt="Brand">
+                            <img src="assets/images/custom-images/sponsors/image6.png" alt="Brand">
                         </div>
-                    </div> -->
+                    </div>
                         <div class="col-md-3 col-6">
                             <div class="brand-item">
                                 <img src="assets/images/custom-images/sponsors/image5.png" alt="Brand">
@@ -717,7 +764,7 @@
                     </div>
                     <div class="row g-0">
                         <div class="col-md-3 col-sm-6">
-                            <a href="#" class="single-gallery">
+                            <a class="single-gallery">
                                 <img src="assets/images/custom-images/past-events/p-event.jpg" alt="Tech Grid Series Past Event">
                                 <div class="gallery-content">
                                     <span>Edition</span>
@@ -726,7 +773,7 @@
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <a href="#" class="single-gallery">
+                            <a class="single-gallery">
                                 <img src="assets/images/custom-images/past-events/p-event-2.jpeg" alt="Tech Grid Series Past Event">
                                 <div class="gallery-content">
                                     <span>Edition</span>
@@ -735,7 +782,7 @@
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <a href="#" class="single-gallery">
+                            <a class="single-gallery">
                                 <img src="assets/images/custom-images/past-events/p-event-3.jpg" alt="Tech Grid Series Past Event">
                                 <div class="gallery-content">
                                     <span>Edition</span>
@@ -744,7 +791,7 @@
                             </a>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <a href="#" class="single-gallery">
+                            <a class="single-gallery">
                                 <img src="assets/images/custom-images/past-events/p-event-2.webp" alt="Tech Grid Series Past Event">
                                 <div class="gallery-content">
                                     <span>Edition</span>
