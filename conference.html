@@ -1,0 +1,870 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>The Tech Grid - Tech Conference 2025</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/all.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/flaticon.css">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/aos.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/plugins/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/gijgo.min.css">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom CSS for equal speaker image dimensions and improved buttons -->
+    <style>
+        .speaker-section .speaker-link .single-speaker .speaker-thumb {
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .speaker-section .speaker-link .single-speaker .speaker-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: .3s;
+            z-index: 0;
+        }
+
+        /* Enhanced Register Now button styling */
+        .btn-5 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            border: none !important;
+            padding: 15px 35px !important;
+            color: white !important;
+            font-weight: 600 !important;
+            border-radius: 50px !important;
+            transition: all 0.4s ease !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            font-size: 16px !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .btn-5:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5) !important;
+            color: white !important;
+            text-decoration: none !important;
+        }
+
+        .btn-5:active {
+            transform: translateY(-1px) !important;
+        }
+
+        .btn-5::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-5:hover::before {
+            left: 100%;
+        }
+
+        /* About section Register Now button */
+        .about-btn .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            border: none !important;
+            padding: 18px 45px !important;
+            color: white !important;
+            font-weight: 600 !important;
+            border-radius: 50px !important;
+            transition: all 0.4s ease !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            font-size: 18px !important;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+            position: relative !important;
+            overflow: hidden !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+        }
+
+        .about-btn .btn:hover {
+            transform: translateY(-4px) scale(1.05) !important;
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6) !important;
+            color: white !important;
+            text-decoration: none !important;
+        }
+
+        .about-btn .btn:active {
+            transform: translateY(-2px) scale(1.02) !important;
+        }
+
+        .about-btn .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .about-btn .btn:hover::before {
+            left: 100%;
+        }
+
+        .about-btn .btn::after {
+            content: '→';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .about-btn .btn:hover::after {
+            opacity: 1;
+            right: 15px;
+        }
+    </style>
+
+    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
+    <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css"> -->
+
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <!-- Header Start Transparent header  -->
+        <div id="header" class="section exvent-header-2">
+
+            <div class="container">
+
+                <!-- Header Wrap Start  -->
+                <div class="header-wrap">
+
+                    <div class="header-logo">
+                        <a href="index.html">
+                            <h2 style="color: #fff; margin: 0;">The Tech Grid</h2>
+                        </a>
+                    </div>
+
+                    <div class="header-menu d-none d-lg-block">
+                        <ul class="main-menu">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="about.html">About Us</a>
+                            </li>
+                            <li class="active-menu"><a href="conference.html">Conference</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="header-meta">
+                        <!-- Header Button Start -->
+                        <div class="header-btn d-none d-xl-block">
+                            <button class="btn-5" style="width: 150px;"><a
+                                    href="registration.html">Register</a></button>
+                        </div>
+                        <!-- Header Button End -->
+
+                        <!-- Header Toggle Start -->
+                        <div class="header-toggle d-lg-none">
+                            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                        <!-- Header Toggle End -->
+                    </div>
+                    <!-- Header Meta End  -->
+
+                </div>
+                <!-- Header Wrap End  -->
+
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- Offcanvas Start-->
+        <div class="offcanvas offcanvas-start" id="offcanvasExample">
+            <div class="offcanvas-header">
+                <!-- Offcanvas Logo Start -->
+                <div class="offcanvas-logo">
+                    <a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+                </div>
+                <!-- Offcanvas Logo End -->
+                <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i
+                        class="flaticon-close"></i></button>
+            </div>
+
+            <!-- Offcanvas Body Start -->
+            <div class="offcanvas-body">
+                <div class="offcanvas-menu">
+                    <ul class="main-menu">
+                        <li class="active-menu">
+                            <a href="index.html">Home</a>
+                            <ul class="sub-menu">
+                                <li><a href="index.html">Home 01</a></li>
+                                <li><a href="index-2.html">Home 02</a></li>
+                                <li><a href="index-3.html">Home 03</a></li>
+                                <li><a href="index-4.html">Home 04</a></li>
+                                <li class="active"><a href="index-5.html">Home Five</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="about.html">Aboute Us</a>
+                        </li>
+                        <li><a href="index-5.html#">Pages</a>
+                            <ul class="sub-menu">
+                                <li><a href="speaker-01.html">Speaker 01</a></li>
+                                <li><a href="speaker-02.html">Speaker 02</a></li>
+                                <li><a href="speaker-03.html">Speaker 03</a></li>
+                                <li><a href="speaker-single.html">Speaker Single</a></li>
+                                <li><a href="event-list.html">Event List</a></li>
+                                <li><a href="event-schedule.html">Event Schedule</a></li>
+                                <li><a href="event-single.html">Event Single</a></li>
+                                <li><a href="login-register.html">Login & Register</a></li>
+                                <li><a href="testimonial.html">Testimonial</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="faq.html">FQA's</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a>
+                            <ul class="sub-menu">
+                                <li><a href="blog.html">Blog list</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Offcanvas Body End -->
+        </div>
+        <!-- Offcanvas End -->
+
+
+        <!-- Hero Start -->
+        <div class="swiper hero-slide">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="exvent-hero-section-05"
+                        style="background-image: url(assets/images/bg/slider-bg-1.jpg);">
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-md-8 text-center">
+                                    <div class="hero-conent-wrapper">
+                                        <div class="top-title-date" data-aos="fade-down" data-aos-delay="500">
+                                            <span>September 27, 2025</span>
+                                        </div>
+                                        <div class="main-title" data-aos="fade-down" data-aos-delay="1000">
+                                            <h1>The Tech Grid Conference 2025</h1>
+                                        </div>
+                                        <ul class="hero-meta" data-aos="fade-right" data-aos-delay="1500">
+                                            <li class="meta-item">
+                                                <i class="fas fa-clock"></i> 1:00 PM WAT
+                                            </li>
+                                            <li class="meta-item">
+                                                <i class="fas fa-user"></i> Expert Speakers
+                                            </li>
+                                            <li class="meta-item">
+                                                <i class="fas fa-map-marker-alt"></i> Online/Remote
+                                            </li>
+                                        </ul>
+                                        <div class="hero-btn" data-aos="fade-up" data-aos-delay="2000">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-3 col-sm-4 col-6">
+                                                    <a href="registration.html" class="btn-5">Register Now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="exvent-hero-section-05"
+                        style="background-image: url(assets/images/bg/slider-bg-2.jpg);">
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-md-8 text-center">
+                                    <div class="hero-conent-wrapper">
+                                        <div class="top-title-date" data-aos="fade-down" data-aos-delay="500">
+                                            <span>September 27, 2025</span>
+                                        </div>
+                                        <div class="main-title" data-aos="fade-down" data-aos-delay="1000">
+                                            <h1>The Rise of AI in Finance</h1>
+                                        </div>
+                                        <ul class="hero-meta" data-aos="fade-right" data-aos-delay="1500">
+                                            <li class="meta-item">
+                                                <i class="fas fa-clock"></i> 1:00 PM WAT
+                                            </li>
+                                            <li class="meta-item">
+                                                <i class="fas fa-user"></i> Expert Speakers
+                                            </li>
+                                            <li class="meta-item">
+                                                <i class="fas fa-map-marker-alt"></i> Online/Remote
+                                            </li>
+                                        </ul>
+                                        <div class="hero-btn" data-aos="fade-up" data-aos-delay="2000">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-3 col-sm-4 col-6">
+                                                    <a href="registration.html" class="btn-5">Register Now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="exvent-hero-section-05" style="background-image: url(assets/images/bg/hero_bg2.jpg);">
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-md-8 text-center">
+                                    <div class="hero-conent-wrapper">
+                                        <div class="top-title-date" data-aos="fade-down" data-aos-delay="500">
+                                            <span>September 27, 2025</span>
+                                        </div>
+                                        <div class="main-title" data-aos="fade-down" data-aos-delay="1000">
+                                            <h1>Tech Grid: AI Finance Revolution</h1>
+                                        </div>
+                                        <ul class="hero-meta" data-aos="fade-right" data-aos-delay="1500">
+                                            <li class="meta-item">
+                                                <i class="fas fa-clock"></i> 1:00 PM WAT
+                                            </li>
+                                            <li class="meta-item">
+                                                <i class="fas fa-user"></i> Expert Speakers
+                                            </li>
+                                            <li class="meta-item">
+                                                <i class="fas fa-map-marker-alt"></i> Online/Remote
+                                            </li>
+                                        </ul>
+                                        <div class="hero-btn" data-aos="fade-up" data-aos-delay="2000">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-3 col-sm-4 col-6">
+                                                    <a href="registration.html" class="btn-5">Register Now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- Hero End -->
+
+        <!-- Countdown Start -->
+        <div class="event-countdown-5 section-padding-02 grey-bg">
+            <div class="container">
+                <div class="counter-wrapper">
+                    <div class="row gx-0 gy-5 align-items-center">
+                        <div class="col-lg-4 text-center">
+                            <div class="counter-content-left">
+                                <h4 class="counter-title">Event Starting</h4>
+                                <span class="counter-subtitle">Time Remaining</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 text-center">
+                            <!-- Countdown Start -->
+                            <div class="exvent-countdown-inner-5 countdown" data-countdown="2025/09/27 13:00:00"
+                                data-format="short">
+                                <div class="single-countdown">
+                                    <span class="count countdown__time daysLeft"></span>
+                                    <span class="value countdown__time daysText"></span>
+                                </div>
+                                <div class="single-countdown countdown-2">
+                                    <span class="count countdown__time hoursLeft"></span>
+                                    <span class="value countdown__time hoursText"></span>
+                                </div>
+                                <div class="single-countdown countdown-3">
+                                    <span class="count countdown__time minsLeft"></span>
+                                    <span class="value countdown__time minsText"></span>
+                                </div>
+                                <div class="single-countdown countdown-4">
+                                    <span class="count countdown__time secsLeft"></span>
+                                    <span class="value countdown__time secsText"></span>
+                                </div>
+                            </div>
+                            <!-- Countdown End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Countdown End -->
+
+
+        <!-- Event Counter Start -->
+        <div class="event-counter-section section-padding grey-bg">
+            <img src="assets/images/shape/counter_shape1.png" alt="shape1" class="conter-shape1">
+            <img src="assets/images/shape/counter_shape2.png" alt="shape2" class="conter-shape2">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-12">
+                        <div class="section-title">
+                            <h5 class="sub-title">The Rise of AI in Finance</h5>
+                            <h2 class="title">Transform your understanding of financial technology</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-12">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-md-4 col-8">
+                                <div class="counter-item">
+                                    <h1 class="counter-numb counter color1">2</h1>
+                                    <span>Speakers</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-8">
+                                <div class="counter-item">
+                                    <h1 class="counter-numb counter color2">1</h1>
+                                    <span>Day Event</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-8">
+                                <div class="counter-item">
+                                    <h1 class="counter-numb color3">1PM</h1>
+                                    <span>WAT Start Time</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Event Counter End -->
+
+
+        <!-- About Area Start -->
+        <div class="about-section section-padding-03">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-lg-5 order-lg-1 order-2">
+                        <div class="about-thumb-wrap">
+                            <img src="assets/images/custom-images/pexels-yankrukov-7698708.jpg" width="500" alt="about_img1">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 order-lg-1 order-1">
+                        <div class="about-content-wrap">
+                            <img src="assets/images/shape/about_content_shape1.png" alt="shape" class="about-box-shape">
+                            <img src="assets/images/shape/about_shape1.png" alt="shape x" class="about-shape-x">
+                            <div class="section-title">
+                                <h5 class="sub-title">The Future of Finance</h5>
+                                <h2 class="title">Discover how AI is revolutionizing the financial industry</h2>
+                            </div>
+                            <div class="section-paragraph">
+                                <p>Join industry leaders, financial experts, and AI pioneers as we explore the
+                                    transformative power of artificial intelligence in finance. From algorithmic trading
+                                    to risk management, discover cutting-edge innovations shaping tomorrow's financial
+                                    landscape.</p>
+                                <p>This exclusive online conference brings together thought leaders to share insights,
+                                    case studies, and practical applications of AI in banking, fintech, and investment
+                                    management.</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 col-sm-4 col-6">
+                                    <a href="registration.html" class="btn-5" style="width: 170px;">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Area End -->
+
+        <!-- Speaker Area Start -->
+        <div class="speaker-section section-padding-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h5 class="sub-title">Speakers & Moderator</h5>
+                            <h2 class="title white">Our Distinguished Speakers</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-0 justify-content-center">
+                    <!-- Speaker 1: Host -->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="speaker-link" href="speaker-host.html">
+                            <div class="single-speaker">
+                                <div class="speaker-thumb">
+                                    <img src="assets/images/custom-images/speakers/TechGrid 4.2 Host _Ako.png"
+                                        alt="Host">
+                                </div>
+                                <div class="speaker-content">
+                                    <h4>Engr. Ako Agenmonmen</h4>
+                                    <span>Founder, SurfSpot Communications Ltd.</span>
+                                </div>
+                                <div class="speaker-shape">
+                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Speaker 2: Guest Speaker -->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="speaker-link" href="speaker-guest.html">
+                            <div class="single-speaker">
+                                <div class="speaker-thumb">
+                                    <img src="assets/images/custom-images/speakers/Tomiwa Akinbile.png"
+                                        alt="Guest Speaker">
+                                </div>
+                                <div class="speaker-content">
+                                    <h4>Tomiwa Akinbile</h4>
+                                    <span>Finance Executive</span>
+                                </div>
+                                <div class="speaker-shape">
+                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Moderator -->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="speaker-link" href="speaker-moderator.html">
+                            <div class="single-speaker">
+                                <div class="speaker-thumb">
+                                    <img src="assets/images/custom-images/speakers/4.2 Moderator Andrew Igbineweka.JPG"
+                                        alt="Moderator">
+                                </div>
+                                <div class="speaker-content">
+                                    <h4>Andrew Igbineweka</h4>
+                                    <span>Event Moderator</span>
+                                </div>
+                                <div class="speaker-shape">
+                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Speaker Area End -->
+
+        <!-- Schedule Area Start -->
+        <div class="schedule-area section-padding-02 grey-bg pt-5">
+            <img src="assets/images/shape/schedule_shape1.png" class="schedule-shape1" alt="Shape1">
+            <img src="assets/images/shape/schedule_shape2.png" class="schedule-shape2" alt="Shape2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title-wrap">
+                            <div class="section-title text-center">
+                                <h5 class="sub-title">Event Schedule</h5>
+                                <h2 class="title">The Rise of AI in Finance</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="schedule-wrapper">
+                            <div class="single-schedule">
+                                <div class="row g-0 align-items-center shedule-row">
+                                    <div class="col-lg-3 col-12">
+                                        <div class="schedule-thumbnail">
+                                            <div class="schedule-time">
+                                                <h3 class="time">27</h3>
+                                                <div class="month-time">
+                                                    <span class="month">September</span>
+                                                    <span class="duration-event">1:00 - 3:00 PM WAT</span>
+                                                </div>
+                                            </div>
+                                            <img src="assets/images/custom-images/image2.png" width="50" height="50"
+                                                alt="Thumbnail" class="schedule-thumb-img">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-12">
+                                        <div class="schedule-content-wrap">
+                                            <div class="schedule-content">
+                                                <div class="schedule-location">
+                                                    <p><span><i class="fas fa-map-marker-alt"></i> </span>Online/Remote
+                                                    </p>
+                                                </div>
+                                                <h4 class="schedule-title">The Rise of AI in Finance</h4>
+                                                <div class="schedule-descrip">
+                                                    <p>Join industry leaders and AI experts as we explore how artificial
+                                                        intelligence is revolutionizing the financial sector. From
+                                                        algorithmic trading and risk assessment to fraud detection and
+                                                        customer service automation.</p>
+                                                    <p class="collapse hidden-desc show" id="collapseContent1">Discover
+                                                        cutting-edge applications of machine learning in credit scoring,
+                                                        robo-advisors, and regulatory compliance. Learn about the latest
+                                                        trends in fintech innovation, blockchain integration, and the
+                                                        future of digital banking. Our expert speakers will share
+                                                        real-world case studies and practical insights on implementing
+                                                        AI solutions in financial institutions.</p>
+                                                </div>
+                                            </div>
+                                            <a class="minus-btn" data-bs-toggle="collapse" href="#collapseContent1"
+                                                role="button" aria-expanded="false" aria-controls="collapseContent1">
+                                                <div class="plus-icon-1 active">
+                                                    <div class="plus-icon-shape active-plus"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Schedule Area End -->
+
+            <!-- Brand Area Start -->
+            <div class="brand-area section-padding-05">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title-wrap">
+                                <div class="section-title text-center">
+                                    <h5 class="sub-title">Sponsors</h5>
+                                    <h2 class="title">Leading companies partnering with us</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-3 col-6">
+                            <div class="brand-item">
+                                <img src="assets/images/custom-images/sponsors/image1.png" alt="Brand">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="brand-item">
+                                <img src="assets/images/custom-images/sponsors/image2.png" alt="Brand">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="brand-item">
+                                <img src="assets/images/custom-images/sponsors/image3.png" alt="Brand">
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3 col-6">
+                        <div class="brand-item">
+                            <img src="assets/images/custom-images/sponsors/image4.png" alt="Brand">
+                        </div>
+                    </div> -->
+                        <div class="col-md-3 col-6">
+                            <div class="brand-item">
+                                <img src="assets/images/custom-images/sponsors/image5.png" alt="Brand">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Brand Area End -->
+
+            <!-- Past Event Gallery Area Start -->
+            <!-- <div class="past-event-gallery-area section-padding-06 grey-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title-wrap">
+                                <div class="section-title text-center">
+                                    <h5 class="sub-title">Previous Events</h5>
+                                    <h2 class="title">Memories</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-md-3 col-sm-6">
+                            <a href="event-list.html" class="single-gallery">
+                                <img src="assets/images/gallery1.jpg" alt="gallery">
+                                <div class="gallery-content">
+                                    <span>Aug</span>
+                                    <h5>2018</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <a href="event-list.html" class="single-gallery">
+                                <img src="assets/images/gallery2.jpg" alt="gallery">
+                                <div class="gallery-content">
+                                    <span>Jun</span>
+                                    <h5>2019</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <a href="event-list.html" class="single-gallery">
+                                <img src="assets/images/gallery3.jpg" alt="gallery">
+                                <div class="gallery-content">
+                                    <span>Sep</span>
+                                    <h5>2020</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <a href="event-list.html" class="single-gallery">
+                                <img src="assets/images/gallery4.jpg" alt="gallery">
+                                <div class="gallery-content">
+                                    <span>May</span>
+                                    <h5>2021</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Past Event Gallery Area End -->
+
+            <!-- Footer Section Start -->
+            <div class="footer-section" style="background-image: url(assets/images/bg/footer_bg1.jpg);">
+                <div class="container">
+                    <div class="footer-newsletter">
+                        <div class="row">
+                            <div class="col-lg-5 col-12 text-sm-start text-center">
+                                <div class="footer-title">
+                                    <span>Subscribe Newsletter</span>
+                                    <h4>Subscribe to recieve
+                                        daily news</h4>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-12">
+                                <div class="footer-newsletter-form">
+                                    <form action="#" method="post">
+                                        <input type="email" name="email" placeholder="Your Email" required>
+                                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-widget-social">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <div class="social-title">
+                                    <h4 class="title">Contact us</h4>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <ul class="social-list">
+                                    <li><a href="https://www.facebook.com/share/19q2HmGVpQ/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://x.com/mysurfspot?s=21" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.instagram.com/surfspottech?igsh=YXg0NjlsNnpkZmZh" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://youtube.com/@mysurfspot?si=ODjysPgbpwAdsEvb" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-widget-navigation text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="footer-navigation">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="conference.html">Conference</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Copyright Start -->
+                <div class="footer-copyright-area">
+                    <div class="container">
+                        <div class="footer-copyright-wrap">
+                            <div class="row align-items-center">
+                                <div class="col-lg-12">
+                                    <!-- Footer Copyright Text Start -->
+                                    <div class="copyright-text text-center">
+                                        <p>2025 Copyright The Tech Grid. All Rights Reserved</p>
+                                    </div>
+                                    <!-- Footer Copyright Text End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Copyright End -->
+            </div>
+            <!-- Footer Section End -->
+
+            <!-- back to top start -->
+            <div class="progress-wrap">
+                <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                </svg>
+            </div>
+            <!-- back to top end -->
+
+        </div>
+
+        <!-- JS
+    ============================================ -->
+        <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="assets/js/plugins/popper.min.js"></script>
+        <script src="assets/js/plugins/bootstrap.min.js"></script>
+
+        <!-- Plugins JS -->
+        <script src="assets/js/plugins/swiper-bundle.min.js"></script>
+        <script src="assets/js/plugins/aos.js"></script>
+        <script src="assets/js/plugins/waypoints.min.js"></script>
+        <script src="assets/js/plugins/back-to-top.js"></script>
+        <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+        <script src="assets/js/plugins/appear.min.js"></script>
+        <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/plugins/lightbox.min.js"></script>
+        <script src="assets/js/plugins/gijgo.min.js"></script>
+        <!-- Main JS -->
+        <script src="assets/js/main.js"></script>
+</body>
+
+</html>
