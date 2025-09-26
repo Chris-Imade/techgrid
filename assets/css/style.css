@@ -1298,7 +1298,7 @@ textarea:-ms-input-placeholder {
 }
 
 .exvent-header-2 .header-toggle button span {
-  background: #150328;
+  background: #ffffff;
 }
 
 .exvent-header-2 .header-meta .header-btn button.btn-5 {
@@ -1481,12 +1481,12 @@ textarea:-ms-input-placeholder {
 
 .header-menu .main-menu li {
   position: relative;
-  padding: 30px 15px;
+  padding: 30px 12px;
 }
 
 @media only screen and (max-width: 1199px) {
   .header-menu .main-menu li {
-    padding: 30px 20px;
+    padding: 30px 10px;
   }
 }
 
@@ -2137,7 +2137,7 @@ textarea:-ms-input-placeholder {
 /*  2.3 - Header Offcanvas CSS
 /*----------------------------------------*/
 .offcanvas {
-  background: #ffffff;
+  background: #1a1a2e;
   width: 320px;
 }
 
@@ -2146,49 +2146,35 @@ textarea:-ms-input-placeholder {
     width: 280px;
   }
 }
-
 .offcanvas-header .close-btn {
   background: none;
   border: 0;
   font-size: 18px;
-  color: #13cb13;
+  color: #ffffff;
   transition: all 0.3s linear;
 }
 
 .offcanvas-header .close-btn:hover {
   transform: rotate(90deg);
-  color: #13cb13;
-}
-
-.offcanvas-logo a img {
-  width: 130px;
-}
-
-.offcanvas-menu {
-  padding: 30px 0;
-}
-
-.offcanvas-menu .main-menu li {
-  position: relative;
+  color: #ffffff;
 }
 
 .offcanvas-menu .main-menu li a {
   display: block;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: "Ubuntu", sans-serif;
-  color: #13cb13;
-  padding: 5px 0px;
-  position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 12px 20px;
+    right: 20px;
+    top: 14px;
+    /* width: 30px; */
+    height: 30px;
+    cursor: pointer;
+    border-radius: 3px;
 }
 
 .offcanvas-menu .main-menu li .menu-expand {
   position: absolute;
-  right: 20px;
-  top: 14px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
 }
@@ -2198,9 +2184,9 @@ textarea:-ms-input-placeholder {
   content: "";
   width: 16px;
   height: 2px;
-  background-color: #150328;
-  top: 50%;
+  background: #ffffff;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.3s linear;
 }
@@ -2210,16 +2196,15 @@ textarea:-ms-input-placeholder {
   content: "";
   width: 2px;
   height: 16px;
+  background: #ffffff;
   left: 50%;
   top: 50%;
-  bottom: 0;
-  background-color: #150328;
   transform: translate(-50%, -50%);
   transition: all 0.3s linear;
 }
 
 .offcanvas-menu .main-menu li:hover > a {
-  color: #13cb13;
+  color: #667eea;
 }
 
 .offcanvas-menu .main-menu li.active > .menu-expand::after {
