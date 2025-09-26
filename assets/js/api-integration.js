@@ -1,11 +1,11 @@
 /**
  * Tech Grid Series API Integration
- * Base URL: https://techgrid-server.onrender.com
+ * Base URL: https://techgrid-server-9zjv.onrender.com
  */
 
 class TechGridAPI {
   constructor() {
-    this.baseURL = "http://localhost:3000";
+    this.baseURL = "https://techgrid-server-9zjv.onrender.com";
     this.init();
   }
 
