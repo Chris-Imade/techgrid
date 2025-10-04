@@ -74,7 +74,7 @@
 
         .btn-outline-white:hover {
             background: white !important;
-            color: #667eea !important;
+            color: #2b3eb3 !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3) !important;
             text-decoration: none !important;
@@ -104,7 +104,7 @@
     <style>
         /* Enhanced Register Now button styling */
         .btn-5 {
-            background: linear-gradient(135deg, #13cb13 0%, #0e9326 100%) !important;
+            background: linear-gradient(135deg, #2b3eb3 0%, #1e2a8a 100%) !important;
             border: none !important;
             padding: 15px 35px !important;
             color: white !important;
@@ -114,14 +114,14 @@
             text-decoration: none !important;
             display: inline-block !important;
             font-size: 16px !important;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+            box-shadow: 0 4px 15px rgba(43, 62, 179, 0.3) !important;
             position: relative !important;
             overflow: hidden !important;
         }
 
         .btn-5:hover {
             transform: translateY(-3px) !important;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5) !important;
+            box-shadow: 0 8px 25px rgba(43, 62, 179, 0.5) !important;
             color: white !important;
             text-decoration: none !important;
         }
@@ -146,7 +146,7 @@
         }
 
         .hero-section {
-            background: linear-gradient(135deg, #13cb13 0%, #0e9326 100%);
+            background: linear-gradient(135deg, #2b3eb3 0%, #1e2a8a 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -172,6 +172,1332 @@
                 font-size: 2.5rem;
             }
         }
+
+        /* Hero Carousel Styles */
+        .hero-carousel-area {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-carousel-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+        }
+
+        .hero-carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1.1);
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(43, 62, 179, 0.8) 0%, 
+                rgba(7, 91, 7, 0.5) 50%, 
+                rgba(1, 11, 1, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .carousel-slide .container {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-btn:hover {
+            background: rgba(43, 62, 179, 0.3);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(43, 62, 179, 0.4);
+        }
+
+        .prev-btn {
+            left: 30px;
+        }
+
+        .next-btn {
+            right: 30px;
+        }
+
+        /* Carousel Indicators */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            z-index: 10;
+            width: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .indicator.active {
+            background: #2b3eb3;
+            border-color: white;
+            box-shadow: 0 0 15px rgba(43, 62, 179, 0.6);
+        }
+
+        .indicator:hover {
+            border-color: white;
+            transform: scale(1.2);
+        }
+
+        /* Carousel Progress Bar */
+        .carousel-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 10;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #2b3eb3 0%, #075b07 100%);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-carousel-wrapper {
+                height: 80vh;
+                min-height: 500px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .carousel-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            }
+
+            .prev-btn {
+                left: 15px;
+            }
+
+            .next-btn {
+                right: 15px;
+            }
+
+            .carousel-indicators {
+                bottom: 20px;
+            }
+
+            .indicator {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+
+            .prev-btn {
+                left: 10px;
+            }
+
+            .next-btn {
+                right: 10px;
+            }
+        }
+
+        /* Animation for slide transitions */
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%) scale(1.1);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%) scale(1.1);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .carousel-slide.slide-in-right {
+            animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-slide.slide-in-left {
+            animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Interactive Animations & Transitions */
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced button animations */
+        .btn-5, .btn-outline-white {
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-5::after, .btn-outline-white::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-5:hover::after, .btn-outline-white:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Card hover animations */
+        .structure-item, .about-thumb-wrap, .ceo-image-wrap {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(0);
+        }
+
+        .structure-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .about-thumb-wrap:hover img, .ceo-image-wrap:hover img {
+            transform: scale(1.05);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Floating animation for icons */
+        .structure-icon i {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Intersection Observer Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-slide-left.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-slide-right.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-scale.animate-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .animate-fade {
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-fade.animate-in {
+            opacity: 1;
+        }
+
+        /* Animate-out states (reverse animations) */
+        .animate-on-scroll.animate-out {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .animate-slide-left.animate-out {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .animate-slide-right.animate-out {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        .animate-scale.animate-out {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .animate-fade.animate-out {
+            opacity: 0;
+        }
+
+        /* Staggered animation delays */
+        .animate-delay-1 { transition-delay: 0.1s; }
+        .animate-delay-2 { transition-delay: 0.2s; }
+        .animate-delay-3 { transition-delay: 0.3s; }
+        .animate-delay-4 { transition-delay: 0.4s; }
+
+        /* Interactive hover effects for feature items */
+        .feature-item {
+            transition: all 0.3s ease;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 5px 0;
+        }
+
+        .feature-item:hover {
+            background: rgba(43, 62, 179, 0.1);
+            transform: translateX(10px);
+            padding-left: 20px;
+        }
+
+        .feature-item i {
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover i {
+            transform: scale(1.2);
+            color: #2b3eb3 !important;
+        }
+
+        /* Social icons animation */
+        .social-list li a {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(0);
+        }
+
+        .social-list li a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(43, 62, 179, 0.3);
+        }
+
+        /* Navigation menu animations */
+        .main-menu li a {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .main-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2b3eb3;
+            transition: width 0.3s ease;
+        }
+
+        .main-menu li a:hover::after,
+        .main-menu li.active-menu a::after {
+            width: 100%;
+        }
+
+        /* Newsletter form animation */
+        .newsletter-form {
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter-form input {
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form input:focus {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(43, 62, 179, 0.2);
+        }
+
+        /* Pulse animation for CTA buttons */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(43, 62, 179, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(43, 62, 179, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(43, 62, 179, 0); }
+        }
+
+        .btn-5:hover {
+            animation: pulse 2s infinite;
+        }
+
+        /* Loading animation for images */
+        .about-thumb-wrap img, .ceo-image-wrap img {
+            transition: all 0.4s ease;
+            filter: brightness(1);
+        }
+
+        .about-thumb-wrap:hover img, .ceo-image-wrap:hover img {
+            filter: brightness(1.1);
+        }
+
+        /* Parallax effect for background elements */
+        .parallax-element {
+            transform: translateZ(0);
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Text reveal animation */
+        .text-reveal {
+            overflow: hidden;
+        }
+
+        .text-reveal span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .text-reveal.animate-in span {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Progress bar animation */
+        .progress-indicator {
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #2b3eb3 0%, white 50%, #075b07 100%);
+            transition: width 0.3s ease;
+        }
+
+        /* Responsive button styles */
+        @media (max-width: 768px) {
+            .btn-5 {
+                font-size: 13px !important;
+                padding: 12px 25px !important;
+                white-space: nowrap;
+            }
+            
+            .hero-btn .col-10 {
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn-5 {
+                font-size: 12px !important;
+                padding: 10px 20px !important;
+            }
+            
+            .hero-btn .col-10 {
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .btn-5 {
+                font-size: 11px !important;
+                padding: 8px 15px !important;
+            }
+            
+            .hero-btn .col-10 {
+                max-width: 220px;
+            }
+        }
+
+        /* Comprehensive Mobile Responsiveness */
+        
+        /* About section - hide image on mobile */
+        @media (max-width: 768px) {
+            .about-thumb-wrap {
+                display: none !important;
+            }
+            
+            .about-content-wrap {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                text-align: center;
+            }
+            
+            .about-section .row {
+                justify-content: center;
+            }
+            
+            .about-section .col-lg-6:last-child {
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+        }
+
+        /* Hero carousel mobile fixes */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem !important;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem !important;
+                margin-bottom: 0.8rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem !important;
+                margin-bottom: 1.5rem;
+                padding: 0 15px;
+            }
+            
+            .carousel-btn {
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 1rem !important;
+            }
+            
+            .prev-btn {
+                left: 15px !important;
+            }
+            
+            .next-btn {
+                right: 15px !important;
+            }
+            
+            .carousel-indicators {
+                bottom: 15px !important;
+            }
+            
+            .indicator {
+                width: 8px !important;
+                height: 8px !important;
+                margin: 0 4px !important;
+            }
+        }
+
+        /* Structure section mobile */
+        @media (max-width: 768px) {
+            .structure-item {
+                padding: 30px 20px !important;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            .structure-icon i {
+                font-size: 2.5rem !important;
+            }
+            
+            .structure-item h4 {
+                font-size: 1.3rem !important;
+            }
+        }
+
+        /* Vision section mobile */
+        @media (max-width: 768px) {
+            .vision-content-wrap {
+                padding-right: 0 !important;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .ceo-image-wrap {
+                text-align: center;
+            }
+            
+            .ceo-image-wrap img {
+                max-width: 300px !important;
+            }
+            
+            .vision-features {
+                text-align: left;
+                max-width: 400px;
+                margin: 30px auto 0 !important;
+            }
+        }
+
+        /* CTA section mobile */
+        @media (max-width: 768px) {
+            .cta-section {
+                padding: 60px 0 !important;
+            }
+            
+            .cta-content .title {
+                font-size: 2rem !important;
+                line-height: 1.3;
+            }
+            
+            .cta-description p {
+                font-size: 1rem !important;
+                padding: 0 15px;
+            }
+            
+            .cta-meta ul {
+                flex-direction: column !important;
+                gap: 15px !important;
+                align-items: center;
+            }
+            
+            .cta-btn .row {
+                gap: 15px;
+            }
+            
+            .cta-btn .col-lg-3 {
+                flex: 0 0 auto;
+                width: auto;
+                min-width: 200px;
+            }
+        }
+
+        /* Footer newsletter mobile */
+        @media (max-width: 768px) {
+            .footer-newsletter {
+                padding: 40px 20px !important;
+                text-align: center;
+            }
+            
+            .footer-newsletter .footer-title {
+                margin-bottom: 20px;
+            }
+            
+            .footer-newsletter .footer-title h4 {
+                font-size: 1.5rem !important;
+            }
+            
+            .footer-newsletter-form {
+                margin-top: 20px !important;
+            }
+            
+            .footer-newsletter-form input {
+                margin-bottom: 15px;
+                width: 100% !important;
+                padding-right: 15px !important;
+            }
+            
+            .footer-newsletter-form .btn {
+                position: relative !important;
+                width: 100% !important;
+                top: auto !important;
+                right: auto !important;
+            }
+        }
+
+        /* General mobile improvements */
+        @media (max-width: 768px) {
+            .section-padding-03 {
+                padding: 60px 0 !important;
+            }
+            
+            .section-padding-02 {
+                padding: 50px 0 !important;
+            }
+            
+            .section-title .title {
+                font-size: 2rem !important;
+                line-height: 1.3;
+            }
+            
+            .section-title .sub-title {
+                font-size: 0.9rem !important;
+                margin-bottom: 10px;
+            }
+            
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem !important;
+            }
+            
+            .hero-description {
+                font-size: 0.9rem !important;
+            }
+            
+            .structure-item {
+                padding: 25px 15px !important;
+            }
+            
+            .structure-icon i {
+                font-size: 2rem !important;
+            }
+            
+            .cta-content .title {
+                font-size: 1.6rem !important;
+            }
+            
+            .cta-btn .col-lg-3 {
+                min-width: 180px;
+            }
+            
+            .footer-newsletter {
+                padding: 30px 15px !important;
+            }
+            
+            .footer-newsletter .footer-title h4 {
+                font-size: 1.3rem !important;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 360px) {
+            .hero-title {
+                font-size: 1.6rem !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem !important;
+            }
+            
+            .carousel-btn {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .prev-btn {
+                left: 10px !important;
+            }
+            
+            .next-btn {
+                right: 10px !important;
+            }
+            
+            .cta-btn .col-lg-3 {
+                min-width: 160px;
+            }
+        }
+
+        /* Landscape mobile orientation */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero-carousel-wrapper {
+                height: 100vh !important;
+                min-height: 500px;
+            }
+            
+            .hero-title {
+                font-size: 2rem !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem !important;
+            }
+            
+            .hero-description {
+                font-size: 0.95rem !important;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Responsive animations */
+        @media (max-width: 768px) {
+            .animate-on-scroll, .animate-slide-left, .animate-slide-right {
+                transform: translateY(30px);
+            }
+            
+            .structure-item:hover {
+                transform: translateY(-5px);
+            }
+            
+            /* Reduce animation intensity on mobile */
+            .animate-slide-left, .animate-slide-right {
+                transform: translateY(20px) !important;
+            }
+            
+            .animate-slide-left.animate-in, .animate-slide-right.animate-in {
+                transform: translateY(0) !important;
+            }
+        }
+
+        /* Fix overflow issues */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            .main-wrapper {
+                overflow-x: hidden;
+            }
+            
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+            
+            .col-lg-6, .col-lg-7, .col-lg-5, .col-lg-8 {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Newsletter section blue styling */
+        .footer-newsletter {
+            background: linear-gradient(135deg, #2b3eb3 0%, #4c6ef5 50%, #1e2a8a 100%) !important;
+        }
+
+        .footer-newsletter-form .btn {
+            background-color: #2b3eb3 !important;
+            border: none !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .footer-newsletter-form .btn:hover {
+            background-color: #1e2a8a !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 5px 15px rgba(43, 62, 179, 0.4) !important;
+        }
+
+        /* Scroll to top button blue styling */
+        .progress-wrap svg.progress-circle path {
+            stroke: #2b3eb3 !important;
+        }
+
+        .progress-wrap::after {
+            color: #2b3eb3 !important;
+        }
+
+        .progress-wrap-3::after {
+            color: #2b3eb3 !important;
+        }
+
+        .progress-wrap-3 svg.progress-circle path {
+            stroke: #2b3eb3 !important;
+        }
+
+        /* Navigation active and hover states */
+        .main-menu li.active-menu a {
+            color: #2b3eb3 !important;
+        }
+
+        .main-menu li a:hover {
+            color: #2b3eb3 !important;
+        }
+
+        /* Modern Mobile Navigation */
+        
+        /* Mobile menu toggle button styling */
+        .mobile-menu-toggle {
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2b3eb3, #4c6ef5);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(43, 62, 179, 0.3);
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle:hover {
+            transform: translateY(-50%) translateY(-2px);
+            box-shadow: 0 6px 20px rgba(43, 62, 179, 0.4);
+        }
+
+        .mobile-menu-toggle:active {
+            transform: translateY(-50%);
+        }
+
+        /* Hamburger icon */
+        .hamburger {
+            position: relative;
+            width: 20px;
+            height: 14px;
+            margin: auto;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: white;
+            border-radius: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 6px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 12px;
+        }
+
+        /* Hamburger animation when active */
+        .mobile-menu-toggle.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .mobile-menu-toggle.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        /* Mobile menu overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile menu container */
+        .mobile-menu-container {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 320px;
+            max-width: 85vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .mobile-menu-container.active {
+            right: 0;
+        }
+
+        /* Mobile menu header */
+        .mobile-menu-header {
+            padding: 25px 20px;
+            background: linear-gradient(135deg, #2b3eb3 0%, #4c6ef5 100%);
+            color: white;
+            position: relative;
+        }
+
+        .mobile-menu-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #2b3eb3, white, #075b07);
+        }
+
+        .mobile-menu-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu-tagline {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Mobile menu close button */
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        /* Mobile menu navigation */
+        .mobile-menu-nav {
+            padding: 30px 0;
+        }
+
+        .mobile-menu-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu-nav li {
+            margin: 0;
+            border-bottom: 1px solid rgba(43, 62, 179, 0.1);
+            transform: translateX(50px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu-container.active .mobile-menu-nav li {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* Staggered animation for menu items */
+        .mobile-menu-container.active .mobile-menu-nav li:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu-container.active .mobile-menu-nav li:nth-child(2) { transition-delay: 0.15s; }
+        .mobile-menu-container.active .mobile-menu-nav li:nth-child(3) { transition-delay: 0.2s; }
+        .mobile-menu-container.active .mobile-menu-nav li:nth-child(4) { transition-delay: 0.25s; }
+        .mobile-menu-container.active .mobile-menu-nav li:nth-child(5) { transition-delay: 0.3s; }
+        .mobile-menu-container.active .mobile-menu-nav li:nth-child(6) { transition-delay: 0.35s; }
+
+        .mobile-menu-nav a {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-menu-nav a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #2b3eb3, #4c6ef5);
+            transform: scaleY(0);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: bottom;
+        }
+
+        .mobile-menu-nav a:hover::before,
+        .mobile-menu-nav a.active::before {
+            transform: scaleY(1);
+        }
+
+        .mobile-menu-nav a:hover {
+            background: linear-gradient(90deg, rgba(43, 62, 179, 0.1), transparent);
+            color: #2b3eb3;
+            padding-left: 35px;
+        }
+
+        .mobile-menu-nav a.active {
+            background: linear-gradient(90deg, rgba(43, 62, 179, 0.15), transparent);
+            color: #2b3eb3;
+            font-weight: 600;
+        }
+
+        /* Mobile menu icons */
+        .mobile-menu-nav a i {
+            margin-right: 15px;
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-nav a:hover i {
+            transform: scale(1.2);
+            color: #2b3eb3;
+        }
+
+        /* Mobile menu footer */
+        .mobile-menu-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+            border-top: 1px solid rgba(43, 62, 179, 0.1);
+        }
+
+        .mobile-menu-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .mobile-menu-social a {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2b3eb3, #4c6ef5);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 3px 10px rgba(43, 62, 179, 0.3);
+        }
+
+        .mobile-menu-social a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(43, 62, 179, 0.4);
+        }
+
+        /* Show mobile menu toggle on mobile devices */
+        @media (max-width: 991px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            /* Ensure header-wrap has relative positioning for absolute toggle button */
+            .header-wrap {
+                position: relative;
+            }
+            
+            /* Hide desktop menu on mobile */
+            .main-menu {
+                display: none !important;
+            }
+            
+            .header-btn {
+                display: none !important;
+            }
+        }
+
+        /* Mobile menu responsive adjustments */
+        @media (max-width: 480px) {
+            .mobile-menu-toggle {
+                right: 15px;
+                width: 35px;
+                height: 35px;
+            }
+            
+            .mobile-menu-container {
+                width: 100%;
+                max-width: 100vw;
+            }
+            
+            .mobile-menu-nav a {
+                padding: 16px 20px;
+                font-size: 0.95rem;
+            }
+            
+            .mobile-menu-header {
+                padding: 20px 15px;
+            }
+            
+            .mobile-menu-footer {
+                padding: 20px 15px;
+            }
+        }
+
+        /* Smooth scrolling for mobile menu links */
+        .mobile-menu-nav a[href^="#"] {
+            cursor: pointer;
+        }
+
+        /* Body scroll lock when mobile menu is open */
+        body.mobile-menu-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+        }
     </style>
 
 </head>
@@ -191,6 +1517,15 @@
                         <a href="index.html"><img src="assets/images/logo-white.png" alt="The Tech Grid"
                                 style="max-height: 100px; height: auto;"></a>
                     </div>
+
+                    <!-- Mobile Menu Toggle Button -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
 
                     <div class="header-menu d-none d-lg-block">
                         <ul class="main-menu">
@@ -213,15 +1548,6 @@
                         </div>
                         <!-- Header Button End -->
 
-                        <!-- Header Toggle Start -->
-                        <div class="header-toggle d-lg-none">
-                            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                        <!-- Header Toggle End -->
                     </div>
                     <!-- Header Meta End  -->
 
@@ -232,101 +1558,215 @@
         </div>
         <!-- Header End -->
 
-        <!-- Offcanvas Start-->
-        <div class="offcanvas offcanvas-start" id="offcanvasExample">
-            <div class="offcanvas-header">
-                <!-- Offcanvas Logo Start -->
-                <div class="offcanvas-logo">
-                    <a href="index.html"><img src="assets/images/logo-white.png" alt="The Tech Grid"
-                            style="max-height: 100px; height: auto;"></a>
-                </div>
-                <!-- Offcanvas Logo End -->
-                <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i
-                        class="flaticon-close"></i></button>
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+        <!-- Mobile Menu Container -->
+        <div class="mobile-menu-container" id="mobileMenuContainer">
+            <!-- Mobile Menu Header -->
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-logo">Tech Grid Series</div>
+                <div class="mobile-menu-tagline">Powered by SurfSpot Communications</div>
+                <button class="mobile-menu-close" id="mobileMenuClose">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
 
-            <!-- Offcanvas Body Start -->
-            <div class="offcanvas-body">
-                <div class="offcanvas-menu">
-                    <ul class="main-menu">
-                        <li class="active-menu">
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="about.html">About Us</a>
-                        </li>
-                        <li><a href="conference.html">Conference</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+            <!-- Mobile Menu Navigation -->
+            <div class="mobile-menu-nav">
+                <ul>
+                    <li>
+                        <a href="index.html" class="active">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            <i class="fas fa-info-circle"></i>
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="conference.html">
+                            <i class="fas fa-calendar-alt"></i>
+                            Conference
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <i class="fas fa-envelope"></i>
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registration.html">
+                            <i class="fas fa-user-plus"></i>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Footer -->
+            <div class="mobile-menu-footer">
+                <div class="mobile-menu-social">
+                    <a href="#" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
-            <!-- Offcanvas Body End -->
         </div>
-        <!-- Offcanvas End -->
 
-        <!-- Hero Section Start -->
-        <div class="hero-slide-area">
-            <div class="exvent-hero-section-05"
-                style="background-image: url(assets/images/bg/slider-bg-1.jpg); position: relative;">
-                <!-- Dark overlay for better text visibility -->
-                <div
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1;">
-                </div>
-                <div class="container" style="position: relative; z-index: 2;">
-                    <div class="row justify-content-center align-items-center">
-                        <div class="col-md-10 text-center">
-                            <div class="hero-content">
-                                <div class="hero-content-inner">
-                                    <h1 data-aos="fade-up" data-aos-delay="500"
-                                        style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); font-weight: 700;">
-                                        The Tech Grid Series</h1>
-                                    <h2 data-aos="fade-up" data-aos-delay="800"
-                                        style="font-size: 2rem; margin-bottom: 1rem; font-weight: 400; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
-                                        Powered by SurfSpot Communications Limited</h2>
-                                    <p data-aos="fade-up" data-aos-delay="1200"
-                                        style="color: rgba(255,255,255,0.95); text-shadow: 1px 1px 2px rgba(0,0,0,0.7); font-size: 1.1rem;">
-                                        A forward-thinking knowledge exchange platform exploring the intersection of
-                                        technology, innovation, and human development across Africa and beyond.</p>
-                                </div>
-                                <div class="hero-btn" data-aos="fade-up" data-aos-delay="2000">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-3 col-sm-4 col-6">
-                                            <a href="conference.html" class="btn-5">Explore Current Edition</a>
+
+        <!-- Hero Carousel Section Start -->
+        <div class="hero-carousel-area">
+            <div class="hero-carousel-wrapper">
+                <!-- Carousel Container -->
+                <div class="hero-carousel" id="heroCarousel">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active" data-bg="assets/images/custom-images/home-page-images/home-page-header.webp" style="background-image: url('assets/images/custom-images/home-page-images/home-page-header.webp');">
+                        <div class="slide-overlay"></div>
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center min-vh-100">
+                                <div class="col-md-10 text-center">
+                                    <div class="hero-content">
+                                        <div class="hero-content-inner">
+                                            <h1 data-aos="fade-up" data-aos-delay="500" class="hero-title">
+                                                The Tech Grid Series</h1>
+                                            <h2 data-aos="fade-up" data-aos-delay="800" class="hero-subtitle">
+                                                Powered by SurfSpot Communications Limited</h2>
+                                            <p data-aos="fade-up" data-aos-delay="1200" class="hero-description">
+                                                A forward-thinking knowledge exchange platform exploring the intersection of
+                                                technology, innovation, and human development across Africa and beyond.</p>
                                         </div>
-                                        <!-- <div class="col-lg-3 col-sm-4 col-6">
-                                            <a href="about.html" class="btn-outline-white">Learn More</a>
-                                        </div> -->
+                                        <div class="hero-btn" data-aos="fade-up" data-aos-delay="2000">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-4 col-md-6 col-sm-8 col-10">
+                                                    <a href="conference.html" class="btn-5" style="width: 100%; text-align: center; display: block; white-space: nowrap; font-size: 14px;">Explore Current Edition</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide" data-bg="assets/images/custom-images/home-page-images/black-tech-conferences-scaled.jpg">
+                        <div class="slide-overlay"></div>
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center min-vh-100">
+                                <div class="col-md-10 text-center">
+                                    <div class="hero-content">
+                                        <div class="hero-content-inner">
+                                            <h1 class="hero-title">
+                                                Connecting Innovators</h1>
+                                            <h2 class="hero-subtitle">
+                                                Building Africa's Tech Future</h2>
+                                            <p class="hero-description">
+                                                Join industry leaders, entrepreneurs, and visionaries as we explore cutting-edge
+                                                technologies and their transformative impact on African societies.</p>
+                                        </div>
+                                        <div class="hero-btn">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-3 col-sm-4 col-6">
+                                                    <a href="registration.html" class="btn-5">Register Now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide" data-bg="assets/images/custom-images/home-page-images/photo-1587825140708-dfaf72ae4b04.jpeg">
+                        <div class="slide-overlay"></div>
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center min-vh-100">
+                                <div class="col-md-10 text-center">
+                                    <div class="hero-content">
+                                        <div class="hero-content-inner">
+                                            <h1 class="hero-title">
+                                                Innovation Unleashed</h1>
+                                            <h2 class="hero-subtitle">
+                                                Where Technology Meets Purpose</h2>
+                                            <p class="hero-description">
+                                                Discover how emerging technologies are reshaping industries, creating opportunities,
+                                                and driving sustainable development across the continent.</p>
+                                        </div>
+                                        <div class="hero-btn">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-3 col-sm-4 col-6">
+                                                    <a href="about.html" class="btn-outline-white">Learn More</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide="0"></button>
+                    <button class="indicator" data-slide="1"></button>
+                    <button class="indicator" data-slide="2"></button>
+                </div>
+
+                <!-- Carousel Progress Bar -->
+                <div class="carousel-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
             </div>
         </div>
-        <!-- Hero Section End -->
+        <!-- Hero Carousel Section End -->
 
         <!-- About Tech Grid Series Start -->
         <div class="about-section section-padding-03">
             <div class="container">
                 <div class="row g-0 align-items-center">
                     <div class="col-lg-6">
-                        <div class="about-thumb-wrap">
+                        <div class="about-thumb-wrap animate-slide-left">
                             <img src="assets/images/custom-images/tg.jpg" alt="Tech Grid Series"
                                 style="width: 100%; border-radius: 10px;">
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="about-content-wrap" style="padding-left: 50px;">
+                        <div class="about-content-wrap animate-slide-right" style="padding-left: 50px;">
                             <div class="section-title">
-                                <h5 class="sub-title">About The Series</h5>
-                                <h2 class="title">Transformative Technology Conversations</h2>
+                                <h5 class="sub-title animate-fade animate-delay-1">About The Series</h5>
+                                <h2 class="title animate-on-scroll animate-delay-2">Transformative Technology Conversations</h2>
                             </div>
                             <div class="section-paragraph">
-                                <p>The Tech Grid Series is a forward-thinking knowledge exchange platform initiated by
+                                <p class="animate-on-scroll animate-delay-3">The Tech Grid Series is a forward-thinking knowledge exchange platform initiated by
                                     SurfSpot Communications Limited to explore the intersection of technology,
                                     innovation, and human development across Africa and beyond.</p>
-                                <p>Designed as a recurring dialogue, the series convenes experts, industry leaders,
+                                <p class="animate-on-scroll animate-delay-4">Designed as a recurring dialogue, the series convenes experts, industry leaders,
                                     innovators, and policymakers to engage in bold conversations around the most
                                     transformative technologies shaping our world—from Artificial Intelligence and
                                     cybersecurity to digital healthcare, education, broadband access, and the future of
@@ -344,18 +1784,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="section-title text-center" style="margin-bottom: 60px;">
-                            <h5 class="sub-title">How It Works</h5>
-                            <h2 class="title">Series Structure</h2>
+                        <div class="section-title text-center animate-on-scroll" style="margin-bottom: 60px;">
+                            <h5 class="sub-title animate-fade animate-delay-1">How It Works</h5>
+                            <h2 class="title animate-scale animate-delay-2">Series Structure</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-6">
-                        <div class="structure-item"
+                        <div class="structure-item animate-slide-left animate-delay-1"
                             style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); height: 100%;">
                             <div class="structure-icon" style="margin-bottom: 20px;">
-                                <i class="fas fa-lightbulb" style="font-size: 3rem; color: #667eea;"></i>
+                                <i class="fas fa-lightbulb" style="font-size: 3rem; color: #2b3eb3;"></i>
                             </div>
                             <h4 style="margin-bottom: 20px; color: #333;">Themed Editions</h4>
                             <p>Each edition of the Tech Grid Series is carefully curated around a specific theme,
@@ -364,10 +1804,10 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="structure-item"
+                        <div class="structure-item animate-slide-right animate-delay-2"
                             style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); height: 100%;">
                             <div class="structure-icon" style="margin-bottom: 20px;">
-                                <i class="fas fa-rocket" style="font-size: 3rem; color: #667eea;"></i>
+                                <i class="fas fa-rocket" style="font-size: 3rem; color: #2b3eb3;"></i>
                             </div>
                             <h4 style="margin-bottom: 20px; color: #333;">Action-Oriented Format</h4>
                             <p>The sessions are structured to be both informative and action-oriented, aiming to inspire
@@ -384,55 +1824,55 @@
             <div class="container">
                 <div class="row g-0 align-items-center">
                     <div class="col-lg-7">
-                        <div class="vision-content-wrap" style="padding-right: 50px;">
+                        <div class="vision-content-wrap animate-slide-left" style="padding-right: 50px;">
                             <div class="section-title">
-                                <h5 class="sub-title">Our Vision</h5>
-                                <h2 class="title">Human-Centred Technology Leadership</h2>
+                                <h5 class="sub-title animate-fade animate-delay-1">Our Vision</h5>
+                                <h2 class="title animate-on-scroll animate-delay-2">Human-Centred Technology Leadership</h2>
                             </div>
                             <div class="section-paragraph">
-                                <p>At the heart of the Tech Grid Series is a simple belief: technology must be
+                                <p class="animate-on-scroll animate-delay-3">At the heart of the Tech Grid Series is a simple belief: technology must be
                                     human-centred, ethical, and inclusive. Whether exploring AI in healthcare or
                                     empowering digital careers, the series challenges conventional thinking and empowers
                                     audiences to navigate the digital future with purpose and preparedness.</p>
-                                <p>Hosted and moderated by <strong>Engr. Akohamen Emmanuel Agenmonmen</strong>, Founder
+                                <p class="animate-on-scroll animate-delay-4">Hosted and moderated by <strong>Engr. Akohamen Emmanuel Agenmonmen</strong>, Founder
                                     & CEO of SurfSpot Communications Ltd, each edition serves as a catalyst for
                                     collaboration, policy dialogue, and capacity-building within Africa's rapidly
                                     evolving tech ecosystem.</p>
                             </div>
-                            <div class="vision-features" style="margin-top: 30px;">
-                                <div class="feature-item"
+                            <div class="vision-features animate-on-scroll animate-delay-4" style="margin-top: 30px;">
+                                <div class="feature-item animate-delay-1"
                                     style="display: flex; align-items: center; margin-bottom: 15px;">
                                     <i class="fas fa-check-circle"
-                                        style="color: #4CAF50; margin-right: 15px; font-size: 1.2rem;"></i>
+                                        style="color: #2b3eb3; margin-right: 15px; font-size: 1.2rem;"></i>
                                     <span>Human-centred technology approach</span>
                                 </div>
-                                <div class="feature-item"
+                                <div class="feature-item animate-delay-2"
                                     style="display: flex; align-items: center; margin-bottom: 15px;">
                                     <i class="fas fa-check-circle"
-                                        style="color: #4CAF50; margin-right: 15px; font-size: 1.2rem;"></i>
+                                        style="color: #2b3eb3; margin-right: 15px; font-size: 1.2rem;"></i>
                                     <span>Ethical and inclusive innovation</span>
                                 </div>
-                                <div class="feature-item"
+                                <div class="feature-item animate-delay-3"
                                     style="display: flex; align-items: center; margin-bottom: 15px;">
                                     <i class="fas fa-check-circle"
-                                        style="color: #4CAF50; margin-right: 15px; font-size: 1.2rem;"></i>
+                                        style="color: #2b3eb3; margin-right: 15px; font-size: 1.2rem;"></i>
                                     <span>Strategic policy dialogue</span>
                                 </div>
-                                <div class="feature-item"
+                                <div class="feature-item animate-delay-4"
                                     style="display: flex; align-items: center; margin-bottom: 15px;">
                                     <i class="fas fa-check-circle"
-                                        style="color: #4CAF50; margin-right: 15px; font-size: 1.2rem;"></i>
+                                        style="color: #2b3eb3; margin-right: 15px; font-size: 1.2rem;"></i>
                                     <span>Capacity-building initiatives</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <div class="ceo-image-wrap text-center">
+                        <div class="ceo-image-wrap text-center animate-slide-right animate-delay-2">
                             <img src="assets/images/custom-images/speakers/TechGrid 4.2 Host _Ako.png"
                                 alt="Engr. Akohamen Emmanuel Agenmonmen"
                                 style="width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                            <div class="ceo-info" style="margin-top: 20px;">
+                            <div class="ceo-info animate-fade animate-delay-3" style="margin-top: 20px;">
                                 <h4 style="color: #333; margin-bottom: 5px;">Engr. Akohamen Emmanuel Agenmonmen</h4>
                                 <p style="color: #666; font-style: italic;">Founder & CEO, SurfSpot Communications Ltd
                                 </p>
@@ -446,26 +1886,26 @@
 
         <!-- Current Edition CTA Start -->
         <div class="cta-section section-padding-02 pt-5 pb-5"
-            style="background-image: url(assets/images/bg/cta_bg1.jpg); background-size: cover; background-position: center; position: relative;">
+            style="background: linear-gradient(135deg, #2b3eb3 0%, #1e2a8a 100%); background-size: cover; background-position: center; position: relative;">
             <div
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #13cb13 0%, #0e9326 100%);">
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(43, 62, 179, 0.1) 0%, rgba(30, 42, 138, 0.1) 100%);">
             </div>
             <div class="container" style="position: relative; z-index: 2;">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <div class="cta-content text-center">
+                        <div class="cta-content text-center animate-on-scroll">
                             <div class="section-title">
-                                <h5 class="sub-title" style="color: rgba(255,255,255,0.8);">Current Edition</h5>
-                                <h2 class="title" style="color: white; margin-bottom: 20px;">The Rise of AI in Finance
+                                <h5 class="sub-title animate-fade animate-delay-1" style="color: rgba(255,255,255,0.8);">Current Edition</h5>
+                                <h2 class="title animate-scale animate-delay-2" style="color: white; margin-bottom: 20px;">The Rise of AI in Finance
                                 </h2>
                             </div>
                             <div class="cta-description">
-                                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 30px;">Join us
+                                <p class="animate-on-scroll animate-delay-3" style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 30px;">Join us
                                     for our latest edition exploring how artificial intelligence is revolutionizing the
                                     financial sector. Connect with industry leaders and discover cutting-edge
                                     innovations.</p>
                             </div>
-                            <div class="cta-meta" style="margin-bottom: 30px;">
+                            <div class="cta-meta animate-fade animate-delay-4" style="margin-bottom: 30px;">
                                 <ul
                                     style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
                                     <li style="color: rgba(255,255,255,0.9); display: flex; align-items: center;">
@@ -482,11 +1922,11 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="cta-btn">
+                            <div class="cta-btn animate-on-scroll animate-delay-4">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-3 col-sm-4 col-6">
                                         <a href="registration.html" class="btn-5"
-                                            style="background: white !important; color: #667eea !important; border: none;">Register
+                                            style="background: white !important; color: #2b3eb3 !important; border: none;">Register
                                             Now</a>
                                     </div>
                                     <div class="col-lg-3 col-sm-4 col-6">
@@ -608,6 +2048,654 @@
 
     <!-- API Integration -->
     <script src="assets/js/api-integration.js"></script>
+
+    <!-- Hero Carousel JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel functionality
+            const carousel = document.getElementById('heroCarousel');
+            if (!carousel) {
+                console.error('Carousel container not found');
+                return;
+            }
+            
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const progressBar = document.getElementById('progressBar');
+            
+            if (slides.length === 0) {
+                console.error('No carousel slides found');
+                return;
+            }
+            
+            let currentSlide = 0;
+            let isTransitioning = false;
+            let autoSlideInterval;
+            let progressInterval;
+            const slideInterval = 6000; // 6 seconds per slide
+            let progress = 0;
+            
+            // Initialize carousel
+            function initializeCarousel() {
+                console.log('Initializing carousel with', slides.length, 'slides');
+                
+                // Reset all slides
+                slides.forEach((slide, index) => {
+                    slide.classList.remove('active');
+                    slide.style.opacity = '0';
+                    slide.style.visibility = 'hidden';
+                    slide.style.zIndex = '1';
+                    
+                    // Set background images
+                    const bgImage = slide.getAttribute('data-bg');
+                    if (bgImage) {
+                        slide.style.backgroundImage = `url(${bgImage})`;
+                        slide.style.backgroundSize = 'cover';
+                        slide.style.backgroundPosition = 'center';
+                        slide.style.backgroundRepeat = 'no-repeat';
+                        console.log(`Set background for slide ${index + 1}: ${bgImage}`);
+                    }
+                });
+                
+                // Reset all indicators
+                indicators.forEach(indicator => {
+                    indicator.classList.remove('active');
+                });
+                
+                // Show first slide
+                if (slides.length > 0) {
+                    slides[0].classList.add('active');
+                    slides[0].style.opacity = '1';
+                    slides[0].style.visibility = 'visible';
+                    slides[0].style.zIndex = '2';
+                    
+                    if (indicators.length > 0) {
+                        indicators[0].classList.add('active');
+                    }
+                    
+                    console.log('First slide activated');
+                }
+                
+                // Start auto-slide after initialization
+                setTimeout(() => {
+                    startAutoSlide();
+                }, 1000);
+            }
+            
+            function goToSlide(slideIndex) {
+                if (isTransitioning || slideIndex === currentSlide || slideIndex < 0 || slideIndex >= slides.length) {
+                    return;
+                }
+                
+                console.log(`Transitioning from slide ${currentSlide} to slide ${slideIndex}`);
+                
+                isTransitioning = true;
+                stopAutoSlide();
+                
+                const currentSlideElement = slides[currentSlide];
+                const nextSlideElement = slides[slideIndex];
+                
+                // Update indicators
+                indicators[currentSlide].classList.remove('active');
+                indicators[slideIndex].classList.add('active');
+                
+                // Fade out current slide
+                currentSlideElement.style.opacity = '0';
+                currentSlideElement.style.zIndex = '1';
+                
+                // Fade in next slide
+                nextSlideElement.style.opacity = '1';
+                nextSlideElement.style.visibility = 'visible';
+                nextSlideElement.style.zIndex = '2';
+                
+                // Update active classes
+                currentSlideElement.classList.remove('active');
+                nextSlideElement.classList.add('active');
+                
+                // Update current slide index
+                currentSlide = slideIndex;
+                
+                // Reset transition flag and restart auto-slide
+                setTimeout(() => {
+                    isTransitioning = false;
+                    startAutoSlide();
+                }, 800);
+            }
+            
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % slides.length;
+                goToSlide(nextIndex);
+            }
+            
+            function prevSlide() {
+                const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+                goToSlide(prevIndex);
+            }
+            
+            function updateProgress() {
+                if (isTransitioning) return;
+                
+                progress += (100 / slideInterval) * 100; // Update every 100ms
+                
+                if (progressBar) {
+                    progressBar.style.width = Math.min(progress, 100) + '%';
+                }
+                
+                if (progress >= 100) {
+                    progress = 0;
+                    nextSlide();
+                }
+            }
+            
+            function resetProgress() {
+                progress = 0;
+                if (progressBar) {
+                    progressBar.style.width = '0%';
+                }
+            }
+            
+            function startAutoSlide() {
+                stopAutoSlide(); // Clear any existing intervals
+                resetProgress();
+                
+                progressInterval = setInterval(updateProgress, 100);
+                console.log('Auto-slide started');
+            }
+            
+            function stopAutoSlide() {
+                if (progressInterval) {
+                    clearInterval(progressInterval);
+                    progressInterval = null;
+                }
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = null;
+                }
+            }
+            
+            // Event listeners
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextSlide();
+                });
+            }
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevSlide();
+                });
+            }
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    goToSlide(index);
+                });
+            });
+            
+            // Pause auto-slide on hover
+            carousel.addEventListener('mouseenter', () => {
+                stopAutoSlide();
+                console.log('Auto-slide paused');
+            });
+            
+            carousel.addEventListener('mouseleave', () => {
+                startAutoSlide();
+                console.log('Auto-slide resumed');
+            });
+            
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoSlide();
+            }, { passive: true });
+            
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide(); // Swipe left, go to next
+                    } else {
+                        prevSlide(); // Swipe right, go to previous
+                    }
+                } else {
+                    // Resume auto-slide if no swipe detected
+                    startAutoSlide();
+                }
+            }
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    nextSlide();
+                }
+            });
+            
+            // Handle visibility change (tab switching)
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    stopAutoSlide();
+                } else {
+                    startAutoSlide();
+                }
+            });
+            
+            // Initialize carousel
+            initializeCarousel();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for bidirectional scroll animations
+            const animationObserverOptions = {
+                root: null,
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.1
+            };
+            
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Element is entering viewport - animate in
+                        entry.target.classList.add('animate-in');
+                        entry.target.classList.remove('animate-out');
+                    } else {
+                        // Element is leaving viewport - animate out
+                        entry.target.classList.remove('animate-in');
+                        entry.target.classList.add('animate-out');
+                    }
+                });
+            }, animationObserverOptions);
+            
+            // Observe all elements with animation classes
+            const animatedElements = document.querySelectorAll(
+                '.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale, .animate-fade'
+            );
+            
+            animatedElements.forEach(element => {
+                animationObserver.observe(element);
+            });
+            
+            // Text reveal animation for headings
+            const textRevealElements = document.querySelectorAll('.text-reveal');
+            textRevealElements.forEach(element => {
+                const text = element.textContent;
+                const words = text.split(' ');
+                element.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
+                
+                // Custom observer for text reveal with bidirectional animation
+                const textRevealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const spans = entry.target.querySelectorAll('span');
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-in');
+                            entry.target.classList.remove('animate-out');
+                            spans.forEach((span, index) => {
+                                setTimeout(() => {
+                                    span.style.opacity = '1';
+                                    span.style.transform = 'translateY(0)';
+                                }, index * 100);
+                            });
+                        } else {
+                            entry.target.classList.remove('animate-in');
+                            entry.target.classList.add('animate-out');
+                            spans.forEach((span, index) => {
+                                setTimeout(() => {
+                                    span.style.opacity = '0';
+                                    span.style.transform = 'translateY(100%)';
+                                }, index * 50);
+                            });
+                        }
+                    });
+                }, animationObserverOptions);
+                
+                textRevealObserver.observe(element);
+            });
+            
+            // Parallax effect for mouse movement
+            let mouseX = 0;
+            let mouseY = 0;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+                mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+                
+                const parallaxElements = document.querySelectorAll('.parallax-element');
+                parallaxElements.forEach((element, index) => {
+                    const speed = (index + 1) * 0.5;
+                    const x = mouseX * speed;
+                    const y = mouseY * speed;
+                    element.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
+            
+            // Enhanced button interactions
+            const buttons = document.querySelectorAll('.btn-5, .btn-outline-white');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+                
+                button.addEventListener('mousedown', function() {
+                    this.style.transform = 'translateY(-1px) scale(0.98)';
+                });
+                
+                button.addEventListener('mouseup', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                });
+            });
+            
+            // Smooth scroll for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Loading animation for images
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '0';
+                    this.style.transform = 'scale(1.1)';
+                    
+                    setTimeout(() => {
+                        this.style.transition = 'all 0.6s ease';
+                        this.style.opacity = '1';
+                        this.style.transform = 'scale(1)';
+                    }, 100);
+                });
+            });
+            
+            // Counter animation for numbers
+            const counters = document.querySelectorAll('[data-count]');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-count'));
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+            
+            // Add scroll progress indicator
+            const progressIndicator = document.createElement('div');
+            progressIndicator.className = 'progress-indicator';
+            progressIndicator.style.position = 'fixed';
+            progressIndicator.style.top = '0';
+            progressIndicator.style.left = '0';
+            progressIndicator.style.zIndex = '9999';
+            document.body.appendChild(progressIndicator);
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressIndicator.style.width = scrolled + '%';
+            });
+            
+            // Add subtle animations to feature items on scroll with bidirectional support
+            const featureItems = document.querySelectorAll('.feature-item');
+            const featureObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    } else {
+                        entry.target.style.opacity = '0.3';
+                        entry.target.style.transform = 'translateX(-20px)';
+                    }
+                });
+            }, animationObserverOptions);
+            
+            featureItems.forEach((item, index) => {
+                // Set initial state
+                item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                item.style.transitionDelay = `${index * 0.1}s`;
+                
+                const delay = index * 100;
+                setTimeout(() => {
+                    featureObserver.observe(item);
+                }, delay);
+            });
+            
+            // Performance optimization: Reduce animations on low-end devices
+            const isLowEndDevice = navigator.hardwareConcurrency <= 2 || navigator.deviceMemory <= 2;
+            if (isLowEndDevice) {
+                document.documentElement.style.setProperty('--animation-duration', '0.3s');
+                document.documentElement.style.setProperty('--animation-delay', '0.05s');
+            }
+        });
+        
+        // Additional scroll-triggered animations
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const rate = scrolled * -0.5;
+            
+            // Parallax effect for hero section
+            const heroSection = document.querySelector('.hero-carousel-area');
+            if (heroSection) {
+                heroSection.style.transform = `translateY(${rate}px)`;
+            }
+            
+            // Fade out navigation on scroll down, fade in on scroll up
+            let lastScrollTop = 0;
+            const header = document.getElementById('header');
+            
+            if (scrolled > lastScrollTop && scrolled > 100) {
+                // Scrolling down
+                header.style.transform = 'translateY(-100%)';
+                header.style.transition = 'transform 0.3s ease';
+            } else {
+                // Scrolling up
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrolled;
+        });
+
+        // Mobile Menu JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenuContainer = document.getElementById('mobileMenuContainer');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const body = document.body;
+
+            // Function to open mobile menu
+            function openMobileMenu() {
+                mobileMenuToggle.classList.add('active');
+                mobileMenuContainer.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                body.classList.add('mobile-menu-open');
+                
+                // Prevent body scroll
+                const scrollY = window.scrollY;
+                body.style.top = `-${scrollY}px`;
+            }
+
+            // Function to close mobile menu
+            function closeMobileMenu() {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuContainer.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                body.classList.remove('mobile-menu-open');
+                
+                // Restore body scroll position
+                const scrollY = body.style.top;
+                body.style.top = '';
+                window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            }
+
+            // Toggle mobile menu
+            mobileMenuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (mobileMenuContainer.classList.contains('active')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+
+            // Close mobile menu when clicking close button
+            mobileMenuClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                closeMobileMenu();
+            });
+
+            // Close mobile menu when clicking overlay
+            mobileMenuOverlay.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+
+            // Close mobile menu when clicking on menu links
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-nav a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Add a small delay to allow the link to be processed
+                    setTimeout(() => {
+                        closeMobileMenu();
+                    }, 100);
+                });
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 991) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Escape key to close mobile menu
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenuContainer.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Smooth scroll for anchor links in mobile menu
+            const anchorLinks = document.querySelectorAll('.mobile-menu-nav a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        closeMobileMenu();
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 400); // Wait for menu to close
+                    }
+                });
+            });
+
+            // Update active menu item based on current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const menuLinks = document.querySelectorAll('.mobile-menu-nav a');
+            
+            menuLinks.forEach(link => {
+                link.classList.remove('active');
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage || 
+                    (currentPage === '' && linkHref === 'index.html') ||
+                    (currentPage === 'index.html' && linkHref === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Add touch gesture support for mobile menu
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            mobileMenuContainer.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            mobileMenuContainer.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 100;
+                const swipeDistance = touchEndX - touchStartX;
+                
+                // Swipe right to close menu (when menu is open from right)
+                if (swipeDistance > swipeThreshold) {
+                    closeMobileMenu();
+                }
+            }
+
+            // Add visual feedback for menu interactions
+            const interactiveElements = document.querySelectorAll('.mobile-menu-nav a, .mobile-menu-social a');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.95)';
+                });
+                
+                element.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
 
 </body>
 
