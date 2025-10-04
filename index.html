@@ -212,6 +212,17 @@
             visibility: visible;
             transform: scale(1);
         }
+        
+        /* Ensure first slide content is always visible */
+        .carousel-slide.active .hero-content,
+        .carousel-slide.active .hero-title,
+        .carousel-slide.active .hero-subtitle,
+        .carousel-slide.active .hero-description,
+        .carousel-slide.active .hero-btn {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+        }
 
         .slide-overlay {
             position: absolute;
@@ -2054,133 +2065,48 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Carousel functionality
             const carousel = document.getElementById('heroCarousel');
-            if (!carousel) {
-                console.error('Carousel container not found');
-                return;
-            }
-            
             const slides = carousel.querySelectorAll('.carousel-slide');
             const indicators = document.querySelectorAll('.indicator');
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
             const progressBar = document.getElementById('progressBar');
             
-            if (slides.length === 0) {
-                console.error('No carousel slides found');
-                return;
-            }
-            
             let currentSlide = 0;
             let isTransitioning = false;
             let autoSlideInterval;
-            let progressInterval;
             const slideInterval = 6000; // 6 seconds per slide
+            
+            // Set background images immediately
+            slides.forEach(slide => {
+                const bgImage = slide.getAttribute('data-bg');
+                if (bgImage) {
+                    slide.style.backgroundImage = `url(${bgImage})`;
+                }
+            });
+            
+            // Ensure first slide content is visible (fix AOS issue)
+            if (slides[0]) {
+                const firstSlideContent = slides[0].querySelectorAll('[data-aos]');
+                firstSlideContent.forEach(element => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'none';
+                    element.style.visibility = 'visible';
+                });
+            }
+            
+            // Refresh AOS if it exists
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+            
+            // Initialize progress bar
             let progress = 0;
+            const progressIncrement = 100 / (slideInterval / 100);
             
-            // Initialize carousel
-            function initializeCarousel() {
-                console.log('Initializing carousel with', slides.length, 'slides');
-                
-                // Reset all slides
-                slides.forEach((slide, index) => {
-                    slide.classList.remove('active');
-                    slide.style.opacity = '0';
-                    slide.style.visibility = 'hidden';
-                    slide.style.zIndex = '1';
-                    
-                    // Set background images
-                    const bgImage = slide.getAttribute('data-bg');
-                    if (bgImage) {
-                        slide.style.backgroundImage = `url(${bgImage})`;
-                        slide.style.backgroundSize = 'cover';
-                        slide.style.backgroundPosition = 'center';
-                        slide.style.backgroundRepeat = 'no-repeat';
-                        console.log(`Set background for slide ${index + 1}: ${bgImage}`);
-                    }
-                });
-                
-                // Reset all indicators
-                indicators.forEach(indicator => {
-                    indicator.classList.remove('active');
-                });
-                
-                // Show first slide
-                if (slides.length > 0) {
-                    slides[0].classList.add('active');
-                    slides[0].style.opacity = '1';
-                    slides[0].style.visibility = 'visible';
-                    slides[0].style.zIndex = '2';
-                    
-                    if (indicators.length > 0) {
-                        indicators[0].classList.add('active');
-                    }
-                    
-                    console.log('First slide activated');
-                }
-                
-                // Start auto-slide after initialization
-                setTimeout(() => {
-                    startAutoSlide();
-                }, 1000);
-            }
-            
-            function goToSlide(slideIndex) {
-                if (isTransitioning || slideIndex === currentSlide || slideIndex < 0 || slideIndex >= slides.length) {
-                    return;
-                }
-                
-                console.log(`Transitioning from slide ${currentSlide} to slide ${slideIndex}`);
-                
-                isTransitioning = true;
-                stopAutoSlide();
-                
-                const currentSlideElement = slides[currentSlide];
-                const nextSlideElement = slides[slideIndex];
-                
-                // Update indicators
-                indicators[currentSlide].classList.remove('active');
-                indicators[slideIndex].classList.add('active');
-                
-                // Fade out current slide
-                currentSlideElement.style.opacity = '0';
-                currentSlideElement.style.zIndex = '1';
-                
-                // Fade in next slide
-                nextSlideElement.style.opacity = '1';
-                nextSlideElement.style.visibility = 'visible';
-                nextSlideElement.style.zIndex = '2';
-                
-                // Update active classes
-                currentSlideElement.classList.remove('active');
-                nextSlideElement.classList.add('active');
-                
-                // Update current slide index
-                currentSlide = slideIndex;
-                
-                // Reset transition flag and restart auto-slide
-                setTimeout(() => {
-                    isTransitioning = false;
-                    startAutoSlide();
-                }, 800);
-            }
-            
-            function nextSlide() {
-                const nextIndex = (currentSlide + 1) % slides.length;
-                goToSlide(nextIndex);
-            }
-            
-            function prevSlide() {
-                const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-                goToSlide(prevIndex);
-            }
-            
-            function updateProgress() {
-                if (isTransitioning) return;
-                
-                progress += (100 / slideInterval) * 100; // Update every 100ms
-                
+            function updateProgressBar() {
+                progress += progressIncrement;
                 if (progressBar) {
-                    progressBar.style.width = Math.min(progress, 100) + '%';
+                    progressBar.style.width = progress + '%';
                 }
                 
                 if (progress >= 100) {
@@ -2196,56 +2122,84 @@
                 }
             }
             
-            function startAutoSlide() {
-                stopAutoSlide(); // Clear any existing intervals
+            function goToSlide(slideIndex, direction = 'right') {
+                if (isTransitioning || slideIndex === currentSlide) return;
+                
+                isTransitioning = true;
                 resetProgress();
                 
-                progressInterval = setInterval(updateProgress, 100);
-                console.log('Auto-slide started');
+                // Remove active class from current slide and indicator
+                slides[currentSlide].classList.remove('active');
+                indicators[currentSlide].classList.remove('active');
+                
+                // Add animation classes for smooth transitions
+                if (direction === 'right') {
+                    slides[slideIndex].classList.add('slide-in-right');
+                } else {
+                    slides[slideIndex].classList.add('slide-in-left');
+                }
+                
+                // Update current slide
+                currentSlide = slideIndex;
+                
+                // Add active class to new slide and indicator
+                slides[currentSlide].classList.add('active');
+                indicators[currentSlide].classList.add('active');
+                
+                // Remove animation classes after transition
+                setTimeout(() => {
+                    slides.forEach(slide => {
+                        slide.classList.remove('slide-in-right', 'slide-in-left');
+                    });
+                    isTransitioning = false;
+                }, 800);
+                
+                // Restart auto-slide timer
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+            
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % slides.length;
+                goToSlide(nextIndex, 'right');
+            }
+            
+            function prevSlide() {
+                const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+                goToSlide(prevIndex, 'left');
+            }
+            
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(updateProgressBar, 100);
             }
             
             function stopAutoSlide() {
-                if (progressInterval) {
-                    clearInterval(progressInterval);
-                    progressInterval = null;
-                }
-                if (autoSlideInterval) {
-                    clearInterval(autoSlideInterval);
-                    autoSlideInterval = null;
-                }
+                clearInterval(autoSlideInterval);
+                resetProgress();
             }
             
             // Event listeners
-            if (nextBtn) {
-                nextBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    nextSlide();
-                });
-            }
-            
-            if (prevBtn) {
-                prevBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    prevSlide();
-                });
-            }
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
             
             indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    goToSlide(index);
+                indicator.addEventListener('click', () => {
+                    const direction = index > currentSlide ? 'right' : 'left';
+                    goToSlide(index, direction);
                 });
             });
             
             // Pause auto-slide on hover
-            carousel.addEventListener('mouseenter', () => {
-                stopAutoSlide();
-                console.log('Auto-slide paused');
-            });
+            carousel.addEventListener('mouseenter', stopAutoSlide);
+            carousel.addEventListener('mouseleave', startAutoSlide);
             
-            carousel.addEventListener('mouseleave', () => {
-                startAutoSlide();
-                console.log('Auto-slide resumed');
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
             });
             
             // Touch/swipe support for mobile
@@ -2255,12 +2209,13 @@
             carousel.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
                 stopAutoSlide();
-            }, { passive: true });
+            });
             
             carousel.addEventListener('touchend', (e) => {
                 touchEndX = e.changedTouches[0].screenX;
                 handleSwipe();
-            }, { passive: true });
+                startAutoSlide();
+            });
             
             function handleSwipe() {
                 const swipeThreshold = 50;
@@ -2272,34 +2227,11 @@
                     } else {
                         prevSlide(); // Swipe right, go to previous
                     }
-                } else {
-                    // Resume auto-slide if no swipe detected
-                    startAutoSlide();
                 }
             }
             
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    e.preventDefault();
-                    prevSlide();
-                } else if (e.key === 'ArrowRight') {
-                    e.preventDefault();
-                    nextSlide();
-                }
-            });
-            
-            // Handle visibility change (tab switching)
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) {
-                    stopAutoSlide();
-                } else {
-                    startAutoSlide();
-                }
-            });
-            
-            // Initialize carousel
-            initializeCarousel();
+            // Start the carousel
+            startAutoSlide();
         });
     </script>
 
