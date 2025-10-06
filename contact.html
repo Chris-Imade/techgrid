@@ -53,6 +53,173 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Custom CSS for blue theme -->
+    <style>
+        /* Enhanced Register Now button styling */
+        .btn-5 {
+            background: linear-gradient(135deg, #2b3eb3 0%, #1e2a8a 100%) !important;
+            border: none !important;
+            padding: 15px 35px !important;
+            color: white !important;
+            font-weight: 600 !important;
+            border-radius: 50px !important;
+            transition: all 0.4s ease !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            font-size: 16px !important;
+            box-shadow: 0 4px 15px rgba(43, 62, 179, 0.3) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .btn-5:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(43, 62, 179, 0.5) !important;
+            color: white !important;
+            text-decoration: none !important;
+        }
+
+        .btn-5:active {
+            transform: translateY(-1px) !important;
+        }
+
+        .btn-5::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-5:hover::before {
+            left: 100%;
+        }
+
+        /* Contact form submit button */
+        .contact-form-wrap .btn {
+            background: linear-gradient(135deg, #2b3eb3 0%, #1e2a8a 100%) !important;
+            border: none !important;
+            padding: 15px 40px !important;
+            color: white !important;
+            font-weight: 600 !important;
+            border-radius: 50px !important;
+            transition: all 0.4s ease !important;
+            box-shadow: 0 4px 15px rgba(43, 62, 179, 0.3) !important;
+        }
+
+        .contact-form-wrap .btn:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(43, 62, 179, 0.5) !important;
+            color: white !important;
+        }
+
+        /* Blue accent colors */
+        .blue-color {
+            color: #2b3eb3 !important;
+        }
+
+        .section-title .sub-title {
+            color: #2b3eb3 !important;
+        }
+
+        /* Contact icons with blue theme */
+        .contact-icon {
+            color: #2b3eb3 !important;
+            background: rgba(43, 62, 179, 0.1) !important;
+        }
+
+        .contact-icon.orange-color {
+            color: #2b3eb3 !important;
+            background: rgba(43, 62, 179, 0.1) !important;
+        }
+        /* Newsletter section blue styling */
+        .footer-newsletter {
+            background: linear-gradient(135deg, #2b3eb3 0%, #4c6ef5 50%, #1e2a8a 100%) !important;
+        }
+        .footer-newsletter-form .btn {
+            background-color: #2b3eb3 !important;
+            border: none !important;
+            transition: all 0.3s ease !important;
+        }
+
+        /* Intersection Observer Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-slide-left.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-slide-right.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-scale.animate-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .animate-fade {
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-fade.animate-in {
+            opacity: 1;
+        }
+
+        /* Staggered animation delays */
+        .animate-delay-1 { transition-delay: 0.1s; }
+        .animate-delay-2 { transition-delay: 0.2s; }
+        .animate-delay-3 { transition-delay: 0.3s; }
+        .animate-delay-4 { transition-delay: 0.4s; }
+
+        /* Responsive animations */
+        @media (max-width: 768px) {
+            .animate-on-scroll, .animate-slide-left, .animate-slide-right {
+                transform: translateY(30px);
+            }
+            
+            .animate-slide-left, .animate-slide-right {
+                transform: translateY(20px) !important;
+            }
+            
+            .animate-slide-left.animate-in, .animate-slide-right.animate-in {
+                transform: translateY(0) !important;
+            }
+        }
+    </style>
 
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
     <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
@@ -153,7 +320,7 @@
 
         <!-- Hero Start -->
         <div class="section exvent-hero-section d-lg-flex d-block align-items-center inner-page-hero"
-            style="background-image: url(assets/images/bg/about_page_bg.jpg);">
+            style="background-image: url(assets/images/custom-images/home-page-images/contact.jpeg);">
 
             <div class="container">
                 <div class="row exvent-hero-row justify-content-center">
@@ -180,13 +347,13 @@
             <div class="container">
                 <div class="row g-5 justify-content-between">
                     <div class="col-lg-5">
-                        <div class="section-title-wrap">
+                        <div class="section-title-wrap animate-slide-left">
                             <div class="section-title">
-                                <h5 class="sub-title orange">Get Information</h5>
-                                <h2 class="title">Contact With Us</h2>
+                                <h5 class="sub-title orange animate-fade animate-delay-1">Get Information</h5>
+                                <h2 class="title animate-on-scroll animate-delay-2">Contact With Us</h2>
                             </div>
                         </div>
-                        <div class="single-contact">
+                        <div class="single-contact animate-on-scroll animate-delay-1">
                             <span class="contact-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </span>
@@ -195,7 +362,7 @@
                                 <p class="address">10 Aimure Avenue G.R.A Benin city</p>
                             </div>
                         </div>
-                        <div class="single-contact">
+                        <div class="single-contact animate-on-scroll animate-delay-2">
                             <span class="contact-icon orange-color">
                                 <i class="flaticon-phone-call"></i>
                             </span>
@@ -204,7 +371,7 @@
                                 <a href="tel:+2348088555855" class="address">+234 808 855 5855</a>
                             </div>
                         </div>
-                        <div class="single-contact">
+                        <div class="single-contact animate-on-scroll animate-delay-3">
                             <span class="contact-icon blue-color">
                                 <i class="far fa-envelope"></i>
                             </span>
@@ -227,13 +394,13 @@
                     </div>
                 </div>
                 <!-- Contact Form Start -->
-                <div class="contact-form-wrap">
+                <div class="contact-form-wrap animate-slide-right">
                     <form id="contactForm" class="contact-form">
                         <div class="row">
                             <div class="col-12">
                                 <div class="section-title-wrap text-center">
                                     <div class="section-title">
-                                        <h2 class="title">Send Us A Message</h2>
+                                        <h2 class="title animate-scale">Send Us A Message</h2>
                                     </div>
                                 </div>
                             </div>
@@ -394,6 +561,37 @@
 
     <!-- API Integration -->
     <script src="assets/js/api-integration.js"></script>
+
+    <!-- Intersection Observer Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animationObserverOptions = {
+                root: null,
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.1
+            };
+            
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        entry.target.classList.remove('animate-out');
+                    } else {
+                        entry.target.classList.remove('animate-in');
+                        entry.target.classList.add('animate-out');
+                    }
+                });
+            }, animationObserverOptions);
+            
+            const animatedElements = document.querySelectorAll(
+                '.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale, .animate-fade'
+            );
+            
+            animatedElements.forEach(element => {
+                animationObserver.observe(element);
+            });
+        });
+    </script>
 
 </body>
 

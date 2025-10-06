@@ -76,6 +76,90 @@
             transition: .3s;
             z-index: 0;
         }
+        /* Newsletter section blue styling */
+        .footer-newsletter {
+            background: linear-gradient(135deg, #2b3eb3 0%, #4c6ef5 50%, #1e2a8a 100%) !important;
+        }
+        .footer-newsletter-form .btn {
+            background-color: #2b3eb3 !important;
+            border: none !important;
+            transition: all 0.3s ease !important;
+        }
+
+        /* Intersection Observer Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-slide-left.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-slide-right.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-scale.animate-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .animate-fade {
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-fade.animate-in {
+            opacity: 1;
+        }
+
+        /* Staggered animation delays */
+        .animate-delay-1 { transition-delay: 0.1s; }
+        .animate-delay-2 { transition-delay: 0.2s; }
+        .animate-delay-3 { transition-delay: 0.3s; }
+        .animate-delay-4 { transition-delay: 0.4s; }
+
+        /* Responsive animations */
+        @media (max-width: 768px) {
+            .animate-on-scroll, .animate-slide-left, .animate-slide-right {
+                transform: translateY(30px);
+            }
+            
+            .animate-slide-left, .animate-slide-right {
+                transform: translateY(20px) !important;
+            }
+            
+            .animate-slide-left.animate-in, .animate-slide-right.animate-in {
+                transform: translateY(0) !important;
+            }
+        }
     </style>
 </head>
 
@@ -173,7 +257,7 @@
 
         <!-- Hero Start -->
         <div class="section exvent-hero-section d-lg-flex d-block align-items-center inner-page-hero"
-            style="background-image: url(assets/images/bg/about_page_bg.jpg);">
+            style="background-image: url(assets/images/custom-images/past-events/p-event-3.jpg);">
 
             <div class="container">
                 <div class="row exvent-hero-row justify-content-center">
@@ -200,9 +284,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="section-title">
-                            <h5 class="sub-title orange">About The Tech Grid Series</h5>
-                            <h2 class="title">Empowering Africa's Digital Future</h2>
+                        <div class="section-title animate-slide-left">
+                            <h5 class="sub-title orange animate-fade animate-delay-1">About The Tech Grid Series</h5>
+                            <h2 class="title animate-on-scroll animate-delay-2">Empowering Africa's Digital Future</h2>
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -227,14 +311,14 @@
                         </div>
                     </div>
                     <div class="col-lg-5 order-lg-1 order-1">
-                        <div class="about-content-wrap">
+                        <div class="about-content-wrap animate-slide-right">
                             <img src="assets/images/shape/about_content_shape1.png" alt="shape" class="about-box-shape">
                             <img src="assets/images/shape/about_shape1.png" alt="shape x" class="about-shape-x">
                             <div class="section-title">
-                                <h5 class="sub-title orange">Why Join The Series</h5>
-                                <h2 class="title">Transform Your Understanding of Technology</h2>
+                                <h5 class="sub-title orange animate-fade animate-delay-1">Why Join The Series</h5>
+                                <h2 class="title animate-on-scroll animate-delay-2">Transform Your Understanding of Technology</h2>
                             </div>
-                            <div class="about-item">
+                            <div class="about-item animate-on-scroll animate-delay-1">
                                 <img src="assets/images/about_icon_1.png" alt="Thumb" class="icon">
                                 <div class="about-item-content">
                                     <h5 class="item-heading">Expert Insights</h5>
@@ -242,7 +326,7 @@
                                         shaping the future of technology in Africa and globally.</p>
                                 </div>
                             </div>
-                            <div class="about-item">
+                            <div class="about-item animate-on-scroll animate-delay-2">
                                 <img src="assets/images/about_icon_2.png" alt="Thumb" class="icon">
                                 <div class="about-item-content">
                                     <h5 class="item-heading">Practical Applications</h5>
@@ -250,7 +334,7 @@
                                         implementations of cutting-edge technologies.</p>
                                 </div>
                             </div>
-                            <div class="about-item">
+                            <div class="about-item animate-on-scroll animate-delay-3">
                                 <img src="assets/images/about_icon_3.png" alt="Thumb" class="icon">
                                 <div class="about-item-content">
                                     <h5 class="item-heading">Network & Collaborate</h5>
@@ -270,9 +354,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <div class="section-title text-center">
-                            <h5 class="sub-title">Speakers & Moderator</h5>
-                            <h2 class="title white">Our Distinguished Speakers</h2>
+                        <div class="section-title text-center animate-scale">
+                            <h5 class="sub-title animate-fade animate-delay-1">Speakers & Moderator</h5>
+                            <h2 class="title white animate-on-scroll animate-delay-2">Our Distinguished Speakers</h2>
                         </div>
                     </div>
                 </div>
@@ -289,9 +373,7 @@
                                     <h4>Engr. Akohamen Emmanuel Agenmonmen (Ako)</h4>
                                     <span>Founder, SurfSpot Communications Ltd.</span>
                                 </div>
-                                <div class="speaker-shape">
-                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
-                                </div>
+                                
                             </div>
                         </a>
                     </div>
@@ -308,9 +390,7 @@
                                     <h4>Tomiwa Akinbile</h4>
                                     <span>Finance Executive</span>
                                 </div>
-                                <div class="speaker-shape">
-                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
-                                </div>
+                                
                             </div>
                         </a>
                     </div>
@@ -327,9 +407,7 @@
                                     <h4>Andrew Igbineweka</h4>
                                     <span>Event Moderator</span>
                                 </div>
-                                <div class="speaker-shape">
-                                    <img src="assets/images/shape/speaker_shape1.png" alt="">
-                                </div>
+                                
                             </div>
                         </a>
                     </div>
@@ -507,6 +585,37 @@
 
     <!-- API Integration -->
     <script src="assets/js/api-integration.js"></script>
+
+    <!-- Intersection Observer Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animationObserverOptions = {
+                root: null,
+                rootMargin: '0px 0px -10% 0px',
+                threshold: 0.1
+            };
+            
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        entry.target.classList.remove('animate-out');
+                    } else {
+                        entry.target.classList.remove('animate-in');
+                        entry.target.classList.add('animate-out');
+                    }
+                });
+            }, animationObserverOptions);
+            
+            const animatedElements = document.querySelectorAll(
+                '.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale, .animate-fade'
+            );
+            
+            animatedElements.forEach(element => {
+                animationObserver.observe(element);
+            });
+        });
+    </script>
 
 </body>
 
