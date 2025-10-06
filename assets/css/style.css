@@ -1150,7 +1150,7 @@ textarea:-ms-input-placeholder {
   top: 0;
   width: 100%;
   z-index: 999;
-  top: 30px;
+  /* top: 30px; */
 }
 
 .exvent-header-section.sticky {
@@ -2246,7 +2246,7 @@ textarea:-ms-input-placeholder {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #1f2d84, #2b3eb3);
+  /* background: linear-gradient(to right, #1f2d84, #2b3eb3); */
   opacity: 0.9;
   z-index: -1;
 }

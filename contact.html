@@ -145,6 +145,54 @@
             transition: all 0.3s ease !important;
         }
 
+        /* Custom navbar styling for Contact page */
+        .exvent-header-section {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            width: 100%;
+            left: 0;
+        }
+
+        .exvent-header-section .header-wrap {
+            background: transparent;
+        }
+
+        .exvent-header-section.sticky {
+            background-color: #063306 !important;
+            backdrop-filter: none;
+        }
+
+        .exvent-header-section .header-menu .main-menu li a {
+            color: #ffffff !important;
+        }
+
+        .exvent-header-section .header-menu .main-menu li.active-menu > a {
+            color: #2b3eb3 !important;
+        }
+
+        .exvent-header-section.sticky .header-menu .main-menu li a {
+            color: #ffffff !important;
+        }
+
+        .exvent-header-section.sticky .header-menu .main-menu li.active-menu > a {
+            color: #2b3eb3 !important;
+        }
+
+        .exvent-header-section .header-menu .main-menu li:hover > a {
+            color: #13cb13 !important;
+        }
+
+        /* Remove hero overlay completely for navbar visibility */
+        .exvent-hero-section::before {
+            display: none !important;
+        }
+
+        /* Rounded register button for consistency */
+        .header-btn button.btn-5 {
+            border-radius: 50px !important;
+        }
+
         /* Intersection Observer Animations */
         .animate-on-scroll {
             opacity: 0;
@@ -230,7 +278,7 @@
 <body>
 
     <div class="main-wrapper">
-        <!-- Header Start  -->
+        <!-- Header Start Transparent header -->
         <div id="header" class="section exvent-header-section">
 
             <div class="container">
@@ -240,7 +288,7 @@
 
                     <div class="header-logo">
                         <a href="index.html">
-                            <img src="assets/images/logo.png" alt="The Tech Grid"
+                            <img src="assets/images/logo-white.png" alt="The Tech Grid"
                                 style="max-height: 100px; height: auto;">
                         </a>
                     </div>
@@ -261,7 +309,7 @@
                     <div class="header-meta">
                         <!-- Header Button Start -->
                         <div class="header-btn d-none d-xl-block">
-                            <button class="btn-5" style="width: 150px;"><a
+                            <button class="btn-5" style="width: 150px; border-radius: 50px;"><a
                                     href="registration.html">Register</a></button>
                         </div>
                         <!-- Header Button End -->

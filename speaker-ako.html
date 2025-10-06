@@ -159,6 +159,66 @@
             border: none !important;
             transition: all 0.3s ease !important;
         }
+
+        /* Custom navbar styling for Speaker page */
+        .header-section.header-transparent {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            width: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .header-section .header-wrap {
+            background: transparent;
+        }
+
+        .header-section.header-sticky {
+            background-color: #063306 !important;
+            backdrop-filter: none;
+            position: fixed;
+            top: 0;
+            box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.07);
+        }
+
+        /* Logo smooth transition */
+        .header-logo img {
+            transition: opacity 0.3s ease;
+        }
+
+        .header-section .header-menu .main-menu li a {
+            color: #ffffff !important;
+        }
+
+        .header-section .header-menu .main-menu li.active-menu > a {
+            color: #2b3eb3 !important;
+        }
+
+        .header-section.header-sticky .header-menu .main-menu li a {
+            color: #ffffff !important;
+        }
+
+        .header-section.header-sticky .header-menu .main-menu li.active-menu > a {
+            color: #2b3eb3 !important;
+        }
+
+        .header-section .header-menu .main-menu li:hover > a {
+            color: #13cb13 !important;
+        }
+
+        /* Remove hero overlay completely for navbar visibility */
+        .exvent-hero-section::before {
+            display: none !important;
+        }
+
+        /* Rounded register button for consistency */
+        .header-btn button.btn-5 {
+            border-radius: 50px !important;
+        }
     </style>
 
 </head>
@@ -193,7 +253,7 @@
             <div class="header-meta">
                 <!-- Header Button Start -->
                 <div class="header-btn d-none d-xl-block">
-                    <button class="btn-5" style="width: 150px;"><a href="registration.html">Register</a></button>
+                    <button class="btn-5" style="width: 150px; border-radius: 50px;"><a href="registration.html">Register</a></button>
                 </div>
                 <!-- Header Button End -->
 
@@ -502,6 +562,25 @@
 
     <!-- API Integration -->
     <script src="assets/js/api-integration.js"></script>
+
+    <!-- Sticky Header and Logo Switch Script -->
+    <script>
+        // Sticky navbar functionality
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header-section');
+            const logo = document.querySelector('.header-logo img');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('header-sticky');
+                // Switch to white logo when sticky
+                logo.src = 'assets/images/logo-white.png';
+            } else {
+                header.classList.remove('header-sticky');
+                // Switch to regular logo when transparent
+                logo.src = 'assets/images/logo.png';
+            }
+        });
+    </script>
 
 </body>
 
